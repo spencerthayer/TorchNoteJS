@@ -80,6 +80,7 @@ heroku create;git add .;git push heroku master;heroku restart;heroku open;heroku
 ####Javascript crypto services suck!
 Yeah they do. Totally. No one here is going to argue that NodeJS is better at security and encryption than SSL, except for when it isn't, *cough [Heartbleed](http://heartbleed.com/)*. Nor am I interested in a debate about how NodeJS cannot compete with many of the more robust server-side languages when it comes to security. No duh!
 
-But those other solutions **cost money**, are **complicated to develop** and can't be turned on at the drop of a hat. TorchNoteJS is a free solution that is very easy to deploy and more importantly permanently delete.
+####So why would I use TorchNoteJS?
+Those other solutions **cost money**, are **complicated to develop** and can't be turned on at the drop of a hat. TorchNoteJS is a free solution that is very easy to deploy and more importantly permanently delete.
 
 Yes, there are other solutions for secure EE2E and I suggest you use them if you believe this application is not sufficient. If you do find a legitimate reason to be suspect of TorchNoteJS please create an issue because I really don't want to promote something that is broken.
