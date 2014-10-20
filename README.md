@@ -6,6 +6,7 @@ A single use end-to-end encrypted (E2EE) client-side chat using Node.js, Express
 
 ###What?
 
+
 The idea behind TorchNoteJS is that any sensative end-to-end conversation should be encrypted from both the server or anyone else. Yet given a long enough timeline any crypto system is vulnerable to exploitation. TorchNoteJS tries to alievate this by only existing when you need it. The moment you need to have a sensative conversation online deploy TorchNoteJS to Herok! Once you've finished delete the app on Heroku and you're done!
 
 ##Installation 
