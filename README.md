@@ -1,5 +1,5 @@
 ![TorchNoteJS](https://raw.githubusercontent.com/spencerthayer/TorchNoteJS/master/public/img/torchchat-logo.png?raw=true "TorchNoteJS")
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/spencerthayer/TorchNoteJS)]
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/spencerthayer/TorchNoteJS)
 
 =========== 
 
@@ -64,6 +64,7 @@ heroku create;git add .;git push heroku master;heroku restart;heroku open;heroku
 - Consider using passphrase strengtheners like: broken grammar, incomplete words, uncommonly misspelled words or number and letter substitutions.
 
 ####Complex Passphrase Pro-Tips:
+(COMING SOON)
 
 ####Passphrases to avoid:
 - Common dictionary words
@@ -72,6 +73,7 @@ heroku create;git add .;git push heroku master;heroku restart;heroku open;heroku
 - Easily discoverable personal data (e.g., netID, names, birthday, address, pets)
 
 ## Deletion
+(COMING SOON)
 
 ##Wait, wait, hold up.
 ####Javascript crypto services suck!
