@@ -13,7 +13,7 @@ The idea behind TorchNoteJS is that any sensative end-to-end conversation should
 
 ####Easy way:
 - [Create a Heroku account](https://id.heroku.com/signup)
-- Click Ò[Deploy to Heroku](https://heroku.com/deploy?template=https://github.com/spencerthayer/TorchNoteJS)Ó to build the app.
+- Click "[Deploy to Heroku](https://heroku.com/deploy?template=https://github.com/spencerthayer/TorchNoteJS)" to build the app.
 - There will be a build phase with a red / green light pass / fail monitor.  If your build fails please contact me@spencerthayer.com.
 - Once your app is built on Heroku click the ÒView XXXXÓ to open the chat.
 
