@@ -78,7 +78,7 @@ heroku create;git add .;git push heroku master;heroku restart;heroku open;heroku
 
 ##Questions
 ####Isn't Javascript supposed to have weak crypto services?
-Yeah they do. Totally. No one here is going to argue that NodeJS is better at security and encryption than SSL, except for when it isn't, *cough [Heartbleed](http://heartbleed.com/)*. Nor am I interested in a debate about how NodeJS cannot compete with many of the more robust server-side languages when it comes to security. No duh!
+Yeah it does. Totally. No one here is going to argue that NodeJS is better at security and encryption than SSL, except for when it isn't, *cough [Heartbleed](http://heartbleed.com/)*. Nor am I interested in a debate about how NodeJS cannot compete with many of the more robust server-side languages when it comes to security. No duh!
 
 ####So why would I use TorchNoteJS?
 Those other solutions **cost money**, are **complicated to develop** and can't be turned on at the drop of a hat. TorchNoteJS is a free solution that is very easy to deploy and more importantly permanently delete.
