@@ -6,9 +6,6 @@
   "preferGlobal": true,
   "main": "http://localhost:3700/",
   "node-main": "./server.js",
-  "scripts": {
-    "start": "node server.js"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/erming/shout.git"
