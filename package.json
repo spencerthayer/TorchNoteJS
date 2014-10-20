@@ -3,11 +3,21 @@
   "author": "Spencer Thayer",
   "version": "0.0.1",
   "description": "An end-to-end encrypted (E2EE) client-side chat using Node.js, Express, Socket.io and CryptoJS.",
+  "preferGlobal": true,
+  "main": "http://localhost:3700/",
+  "node-main": "./server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erming/shout.git"
+  },
   "dependencies": {
     "socket.io": "latest",
     "cryptojs": "latest",
     "express": "latest",
     "jade": "latest",
     "ejs": "latest"
-  },
+  }
 }
