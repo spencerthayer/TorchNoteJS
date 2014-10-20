@@ -1,4 +1,5 @@
-TorchNoteJS [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/spencerthayer/TorchNoteJS)
+![TorchNoteJS](/blob/master/public/img/torchchat-logo.png?raw=true "TorchNoteJS") [![solarized dualmode](https://github.com/altercation/solarized/raw/master/img/solarized-yinyang.png)]
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/spencerthayer/TorchNoteJS)
 ===========
 
 An end-to-end encrypted (E2EE) client-side chat using Node.js, Express, Socket.io and CryptoJS.
