@@ -29,7 +29,11 @@ When you need to have a sensative conversation online deploy a new TorchNoteJS a
 
 ####Hard way:
 - [Install Node.js](http://howtonode.org/how-to-install-nodejs)
-- Clone the project:```sh git clone http://github.com/spencerthayer/TorchNoteJS.git ```
-- Install TorchNoteJS dependencies:```sh npm install ```
-- Run local test:```sh open http://localhost:3700;npm start; ```
-- Deploy the TorchNoteJS server to Heroku: ```sh heroku create;git add .;git push heroku master;heroku restart;heroku open;heroku logs -t; ```
+- Clone the project:
+```sh git clone http://github.com/spencerthayer/TorchNoteJS.git```
+- Install TorchNoteJS dependencies:
+```sh npm install```
+- Run local test:
+```sh open http://localhost:3700;npm start;```
+- Deploy the TorchNoteJS server to Heroku:
+```sh heroku create;git add .;git push heroku master;heroku restart;heroku open;heroku logs -t; ```
