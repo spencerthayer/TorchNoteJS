@@ -2,6 +2,6 @@
   "name": "TorchNoteJS",
   "description": "An end-to-end encrypted (E2EE) client-side chat using Node.js, Express, Socket.io and CryptoJS.",
   "repository": "https://github.com/spencerthayer/TorchNoteJS.git",
-  "logo": "https://raw.githubusercontent.com/spencerthayer/TorchNoteJS/master/public/img/TorchChat-square.svg",
+  "logo": "https://raw.githubusercontent.com/spencerthayer/TorchNoteJS/master/public/img/TorchChat-square.png",
   "keywords": ["node", "express", "socket", "cryptojs", "chat", "secure", "encryption", "e2ee"]
 }
