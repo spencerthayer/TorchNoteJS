@@ -11,11 +11,11 @@ The moment you need to have a sensative conversation online deploy TorchNoteJS t
 
 ### Usage
 
-Easy way:
+'''Easy way:'''
 - Create a Heroku account (https://id.heroku.com/signup)
 - Click the "Deploy" button above.
 
-Hard way:
+'''Hard way:'''
 - Install Node.js (http://howtonode.org/how-to-install-nodejs)
 - Clone the project:
 ```sh
