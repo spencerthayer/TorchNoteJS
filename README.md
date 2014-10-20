@@ -42,7 +42,7 @@ open http://localhost:3700;npm start;
 ```sh
 heroku create;git add .;git push heroku master;heroku restart;heroku open;heroku logs -t;
 ```
- - **PROTIP:** The final command `heroku open;heroku logs -t;` starts the app and a running log in the terminal window. This allows you to monitor all I/O data passed by Heroku. If you know what you're looking for, you should be able to watch out for any suspect traffic.
+- **PROTIP:** The final command `heroku open;heroku logs -t;` starts the app and a running log in the terminal window. This allows you to monitor all I/O data passed by Heroku. If you know what you're looking for, you should be able to watch out for any suspect traffic.
 - Please see **usage** instructions for further details.
 
 ##Usage
