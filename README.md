@@ -83,4 +83,5 @@ Yeah they do. Totally. No one here is going to argue that NodeJS is better at se
 ####So why would I use TorchNoteJS?
 Those other solutions **cost money**, are **complicated to develop** and can't be turned on at the drop of a hat. TorchNoteJS is a free solution that is very easy to deploy and more importantly permanently delete.
 
+####Meh, I'll use...
 Yes, there are other solutions for secure EE2E and I suggest you use them if you believe this application is not sufficient. If you do find a legitimate reason to be suspect of TorchNoteJS please create an issue because I really don't want to promote something that is broken.
