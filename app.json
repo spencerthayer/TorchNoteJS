@@ -1,0 +1,7 @@
+{
+  "name": "TorchNoteJS",
+  "description": "An end-to-end encrypted (E2EE) client-side chat using Node.js, Express, Socket.io and CryptoJS.",
+  "repository": "https://github.com/spencerthayer/BurnNoteJS.git",
+  "logo": "http://node-js-sample.herokuapp.com/node.svg",
+  "keywords": ["node", "express", "socket", "cryptojs", "chat", "secure", "encryption", "e2ee"]
+}
