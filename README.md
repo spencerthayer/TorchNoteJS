@@ -4,12 +4,10 @@
 [![Build Status](https://travis-ci.org/spencerthayer/TorchNoteJS.svg?branch=master)](http://travis-ci.org/spencerthayer/TorchNoteJS)
 [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/spencerthayer/TorchNoteJS)
 
-
 #TorchNoteJS
-=========== 
 A single use end-to-end encrypted (E2EE) client-side chat using Node.js, Express, Socket.io and CryptoJS. 
 
-#Why TorchChatJS
+#Why TorchNoteJS
 
 Propper encryption, unfortunately, isn't always easy to use. The inconvenience posed by encryption systems is counter-balanced by the protection against much more than overzealous law enforcement agents. Your Internet communications are vulnerable to a wide range of governmental and private adversaries in addition to law enforcement, whether it's the National Security Agency or a hacker trying to intercept your information, and encryption will help you defend against those adversaries as well.
 
@@ -86,7 +84,7 @@ git clone http://github.com/spencerthayer/TorchNoteJS.git;cd TorchNoteJS;heroku 
 **PROTIP:** The final command `heroku open;heroku logs -t;` opens the app in your browser and starts log mode. This allows you to monitor all your app's I/O data passed by Heroku. If you know what you're looking for, you should be able to watch out for any suspicious traffic
 
 ## App Deletion
-Part of what makes TorchChatJS unique is that it is designed to be removed. A permanent app installation will makes the interception of your chats by way of code vulnerabilities likely. Do not trust long running TorchChatJS applications.
+Part of what makes TorchNoteJS unique is that it is designed to be removed. A permanent app installation will makes the interception of your chats by way of code vulnerabilities likely. Do not trust long running TorchNoteJS applications.
 
 ###How to delete the app:
 - Go to your [Heroku App Panel](https://dashboard-next.heroku.com/apps/).
@@ -102,10 +100,10 @@ for app in $(heroku apps); do heroku apps:destroy --app $app --confirm $app; don
 ```
 
 ##Usage
-An important thing to remember when using good encryption standards is to keep all communication hidden. In other words keep in mind that more than just the chat itself will need to be obscured. With TorchChatJS there are the following vulnerabilities: **connection**, **operating system**, **browser**, **application URL** and finally **passphrase**.
+An important thing to remember when using good encryption standards is to keep all communication hidden. In other words keep in mind that more than just the chat itself will need to be obscured. With TorchNoteJS there are the following vulnerabilities: **connection**, **operating system**, **browser**, **application URL** and finally **passphrase**.
 
 ####Connection
-TorchChatJS encrypts all messages data through the server and is as strong as your passphrase. You should consider all communication through the app to be secure as long as you're confident with your passphrase.
+TorchNoteJS encrypts all messages data through the server and is as strong as your passphrase. You should consider all communication through the app to be secure as long as you're confident with your passphrase.
 
 However if your connection is being monitored and your passphrase is weakit is possible for a skilled cryptographer to intercept your messages. You can add additional layers of security using an anonymous VPN and/or TOR.
 
@@ -134,7 +132,7 @@ Discretely share the app URL with your contacts using private self destructing n
 ####Passphrase
 The last thing you and your contacts will want to to do is make sure that the E2EE communication is tied up neatly with a unique, easy-to-remember-but-impossible-to-crack passphrase or "[key]()". A key length of 80 characters is generally considered the minimum for strong security with symmetric encryption algorithms. 128-bit keys are commonly used and considered very strong.
 
-When you and your contacts have agreed upon a passphrase you each will need to put the passphrase into the `Passphrase:` field within the live TorchChatJS app. For maximum security use a [runnig cipher](http://wikipedia.org/wiki/Running_key_cipher) where the passphrase is changed based on logic throughout the conversation.
+When you and your contacts have agreed upon a passphrase you each will need to put the passphrase into the `Passphrase:` field within the live TorchNoteJS app. For maximum security use a [runnig cipher](http://wikipedia.org/wiki/Running_key_cipher) where the passphrase is changed based on logic throughout the conversation.
 
 #####Common sense passphrase tips:
 - Do not ever leave the passphrase blank.
@@ -171,13 +169,13 @@ When you and your contacts have agreed upon a passphrase you each will need to p
 ####Isn't Javascript supposed to have weak crypto services?
 Yeah it does. Totally. No one here is going to argue that NodeJS is better at security and encryption than SSL, except for when it isn't, *cough [Heartbleed](http://heartbleed.com/)*. Nor am I interested in a debate about how NodeJS cannot compete with many of the more robust server-side languages when it comes to security. No duh!
 
-This is exactly why TorchChatJS does not rely on the main server to exchange the cryptocipher. TorchChatJS uses AES256 encryption as it's the most secure and fastest encryption available. it doesn't bother attempting to secure the connection as that is impossible using JavaScript technology.
+This is exactly why TorchNoteJS does not rely on the main server to exchange the cryptocipher. TorchNoteJS uses AES256 encryption as it's the most secure and fastest encryption available. it doesn't bother attempting to secure the connection as that is impossible using JavaScript technology.
 
 ####So why would I use TorchNoteJS?
 Those other solutions **cost money**, are **complicated to develop** and can't be turned on at the drop of a hat. TorchNoteJS is a free solution that is very easy to deploy and more importantly permanently delete.
 
 ####This is too much work.
-The TorchChatJS goal is not about making a one click solution to online communication. *Those do not exist.* Instead it is to be used as part of an encryption suite each part increasing your personal security. You can use TorchChatJS without any additional security steps and it will still encrypt your conversation but that doesn't mean your conversation was not intercepted.
+The TorchNoteJS goal is not about making a one click solution to online communication. *Those do not exist.* Instead it is to be used as part of an encryption suite each part increasing your personal security. You can use TorchNoteJS without any additional security steps and it will still encrypt your conversation but that doesn't mean your conversation was not intercepted.
 
 ####Meh, why not just use ... ?
 Yes, there are other solutions for secure EE2E and I suggest you use them if you believe this application is knot sufficient. If you do find a legitimate reason to be suspect of TorchNoteJS please create an issue because I really don't want to promote something that is broken.
