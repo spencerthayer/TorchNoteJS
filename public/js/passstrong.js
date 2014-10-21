@@ -18,7 +18,7 @@ jQuery(document).ready(function () {
             // Options
             minChar: 32,
             errorMessages: {
-                password_to_short: "The passphrae is too short!",
+                password_to_short: "The passphrase is too short!",
                 same_as_username: "Your passphrase cannot be the same as your nickname!"
             },
             scores: [10, 25, 50, 75, 100],
