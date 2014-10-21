@@ -8,7 +8,7 @@
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/spencerthayer/TorchNoteJS?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 A single use end-to-end encrypted (E2EE) client-side chat using Node.js, Express, Socket.io and CryptoJS. 
 
-#Why TorchNoteJS
+##Why TorchNoteJS
 
 Propper encryption, unfortunately, isn't always easy to use. The inconvenience posed by encryption systems is counter-balanced by the protection against much more than overzealous law enforcement agents. Your Internet communications are vulnerable to a wide range of governmental and private adversaries in addition to law enforcement, whether it's the National Security Agency or a hacker trying to intercept your information, and encryption will help you defend against those adversaries as well.
 
