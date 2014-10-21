@@ -48,6 +48,11 @@ heroku create;git add .;git push heroku master;heroku open;heroku logs -t;
 - **PROTIP:** The final command `heroku open;heroku logs -t;` opens the app in your browser and starts log mode. This allows you to monitor all your app's I/O data passed by Heroku. If you know what you're looking for, you should be able to watch out for any suspicious traffic.
 - Please see **usage** instructions for further details.
 
+QUICK START:
+```sh
+git clone http://github.com/spencerthayer/TorchNoteJS.git;cd TorchNoteJS;npm install;heroku create;git add .;git push heroku master;heroku open;heroku logs -t;
+```
+
 ## App Deletion
 Part of what makes TorchChatJS unique is that it is designed to be removed. A permanent app installation will makes the interception of your chats by way of code vulnerabilities likely. Do not trust long running TorchChatJS applications.
 
