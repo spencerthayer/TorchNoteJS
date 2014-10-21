@@ -5,6 +5,7 @@
 [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/spencerthayer/TorchNoteJS)
 
 #TorchNoteJS
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/spencerthayer/TorchNoteJS?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 A single use end-to-end encrypted (E2EE) client-side chat using Node.js, Express, Socket.io and CryptoJS. 
 
 #Why TorchNoteJS
