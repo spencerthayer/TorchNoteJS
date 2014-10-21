@@ -35,8 +35,13 @@ $(document).ready(function() {
 			$("#in").html(input.join("\n"));
 			
 			$('#chatInput').val('')
+			document.getElementById('chatInput').reset();
 			
 			scrollToBottom();
+		}
+		if(keyCode == 13 && message == "") {
+			$('#chatInput').val('')
+			document.getElementById('chatInput').reset();
 		}
 	});
 	
