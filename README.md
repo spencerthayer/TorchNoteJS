@@ -101,11 +101,6 @@ for app in $(heroku apps); do heroku apps:destroy --app $app --confirm $app; don
 ##Usage
 An important thing to remember when using good encryption standards is to keep all communication hidden. In other words keep in mind that more than just the chat itself will need to be obscured. With TorchChatJS there are the following vulnerabilities: connection, operating system, browser, application URL and finally passphrase.
 
-###This is too much work.
-The TorchChatJS goal is not about making a one click solution to online communication. *Those do not exist.* Instead it is to be used as part of an encryption suite each part increasing your personal security.
-
-You can use TorchChatJS without any additional security steps and it will still encrypt your conversation but that doesn't mean your conversation was not intercepted.
-
 ####Connection
 TorchChatJS encrypts all messages data through the server and is as strong as your passphrase. You should consider all communication through the app to be secure as long as you're confident with your passphrase.
 
@@ -177,6 +172,9 @@ This is exactly why TorchChatJS does not rely on the main server to exchange the
 
 ####So why would I use TorchNoteJS?
 Those other solutions **cost money**, are **complicated to develop** and can't be turned on at the drop of a hat. TorchNoteJS is a free solution that is very easy to deploy and more importantly permanently delete.
+
+####This is too much work.
+The TorchChatJS goal is not about making a one click solution to online communication. *Those do not exist.* Instead it is to be used as part of an encryption suite each part increasing your personal security. You can use TorchChatJS without any additional security steps and it will still encrypt your conversation but that doesn't mean your conversation was not intercepted.
 
 ####Meh, why not just use ... ?
 Yes, there are other solutions for secure EE2E and I suggest you use them if you believe this application is knot sufficient. If you do find a legitimate reason to be suspect of TorchNoteJS please create an issue because I really don't want to promote something that is broken.
