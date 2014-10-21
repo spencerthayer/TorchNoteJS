@@ -61,3 +61,9 @@ letter-spacing: 1px;
 }
 .chatwindow {
 }
+.error-list {
+    list-style-position: inside;
+}
+.error-list li {
+    display: inline; 
+}

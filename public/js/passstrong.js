@@ -21,7 +21,7 @@ jQuery(document).ready(function () {
                 password_to_short: "The passphrae is too short!",
                 same_as_username: "Your passphrase cannot be the same as your nickname!"
             },
-            scores: [25, 50, 75, 100],
+            scores: [10, 25, 50, 75, 100],
             verdicts: ["Weak", "Normal", "Medium", "Strong", "Very Strong"],
             showVerdicts: true,
             raisePower: 1,
