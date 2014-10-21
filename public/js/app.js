@@ -8,21 +8,25 @@ $(document).ready(function() {
 	var output = []; // encrypted textarea
 	$("#in").html(input.join("\n"));
 	
-	$('#key').val('lapin') // default passphrase
+	var defaultPassphrase = window.location.hostname;
+	$('#key').val('')
+	//$('#key').val(defaultPassphrase) // default passphrase
 	var passphrase = $('#key').val();
 
 	// press enter in chat box: add plain text to input box, add encrypted text to output box
 	$('#chatInput').keypress(function(e) {
 		var keyCode = (e.which ? e.which : e.keyCode); 
 		var message = $('#chatInput').val();
-		
+		var nickname = $('#nickInput').val();
+		/*
 		if ((keyCode == 10 || keyCode == 13) && e.ctrlKey) { // press ctrl + enter: line break
 			$('#chatInput').val($('#chatInput').val() + '&#013;&#010');
 		}
+		*/
 		if(keyCode == 13 && message != "") { // press enter: send message
 			passphrase = $('#key').val();
 			
-			var encryptedMessage = CryptoJS.AES.encrypt(message, passphrase);
+			var encryptedMessage = CryptoJS.AES.encrypt(nickname + ' : ' + message, passphrase);
 			var decryptedMessage = CryptoJS.AES.decrypt(encryptedMessage, passphrase).toString(CryptoJS.enc.Latin1);
 						
 			socket.emit('send', { user: username, message: encryptedMessage.toString()});

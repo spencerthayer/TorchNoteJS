@@ -20,7 +20,7 @@ window.onload = function() {
             console.log("There is a problem:", data);
         }
     });
- 
+    /** Irrelevant- need to delete this later. **/
     sendButton.onclick = function() {
         if(name.value == "") {
             alert("Please type your name!");

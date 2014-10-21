@@ -15,7 +15,7 @@ var io = require('socket.io').listen(app.listen(port));
 var allUsers = [];
 io.sockets.on('connection', function (user) {
 	var x = Math.floor(Math.random() * 999) + 1;
-	var randomUsername = 'chatter' + '-' + x;
+	var randomUsername = '#' + x;
 	allUsers.push({id: user.id, name: randomUsername});
 	console.log('LINE - ' + JSON.stringify(allUsers));
 		

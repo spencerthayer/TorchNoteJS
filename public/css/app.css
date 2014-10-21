@@ -1,7 +1,7 @@
 html, body {
     width:100%;
         height: 100%;
-    overflow: hidden;
+    /*overflow: hidden;*/
     
 }
 
@@ -34,6 +34,17 @@ textarea {
 #out:-ms-input-placeholder { /* Internet Explorer 10+ */
     color:    #999;
 	font-size: 14px;
+}
+
+.title {
+position: absolute;
+top: 15px;
+left: 15px;
+font-size: 12px;
+font-weight: 700;
+color: #959595;
+text-transform: uppercase;
+letter-spacing: 1px;
 }
 
 #key {
