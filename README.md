@@ -99,7 +99,7 @@ for app in $(heroku apps); do heroku apps:destroy --app $app --confirm $app; don
 ```
 
 ##Usage
-An important thing to remember when using good encryption standards is to keep all communication hidden. In other words keep in mind that more than just the chat itself will need to be obscured. With TorchChatJS there are the following vulnerabilities: connection, operating system, browser, application URL and finally passphrase.
+An important thing to remember when using good encryption standards is to keep all communication hidden. In other words keep in mind that more than just the chat itself will need to be obscured. With TorchChatJS there are the following vulnerabilities: **connection**, **operating system**, **browser**, **application URL** and finally **passphrase**.
 
 ####Connection
 TorchChatJS encrypts all messages data through the server and is as strong as your passphrase. You should consider all communication through the app to be secure as long as you're confident with your passphrase.
