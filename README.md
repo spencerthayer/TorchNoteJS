@@ -6,30 +6,32 @@
 
 A single use end-to-end encrypted (E2EE) client-side chat using Node.js, Express, Socket.io and CryptoJS. 
 
-#What?
+#Why TorchChatJS
+
+Propper encryption, unfortunately, isn't always easy to use. The inconvenience posed by encryption systems is counter-balanced by the protection against much more than overzealous law enforcement agents. Your Internet communications are vulnerable to a wide range of governmental and private adversaries in addition to law enforcement, whether it's the National Security Agency or a hacker trying to intercept your information, and encryption will help you defend against those adversaries as well.
+
 The goal behind any EE2E chat is that all sensitive communication should be encrypted from both the server and everyone else who does not have the *passphrase*. The problem with most encrypted chat is that given a long enough timeline anything online is vulnerable to exploitation.
 
-TorchNoteJS tries to alleviate this by only running when you need it.
+TorchNoteJS tries to alleviate this by only running when you need it. When sensitive communication is necessary simply deploy a new TorchNoteJS app to Heroko and then delete the app using the Heroku GUI when done.
 
-When sensitive communication is necessary simply deploy a new TorchNoteJS app to Heroko and delete the app using the Heroku GUI when done.
-
-
-##Installation 
+##App Installation 
 
 ###Easy way:
 - [Create a Heroku account](https://id.heroku.com/signup)
 - Click "[Deploy to Heroku](https://heroku.com/deploy?template=https://github.com/spencerthayer/TorchNoteJS)" to build the app.
-- If you would like add an optional name, the default random name is a little more secure, and then click `Deploy for Free`.
-- There will then be a build phase with a **red/green** or **pass/fail** monitor.
- - *If your build fails please contact [me@spencerthayer.com](mailto:me@spencerthayer.com).*
-- Once your app is built on Heroku click the `View it` at the bottom. This will open your app's new URL.
+- Add an optional app name, by default the name is random, and then click `Deploy for Free`.
+- There will then be a build phase with a **red/green** **pass/fail** monitor.
+ - *If your build fails please contact [me@spencerthayer.com](mailto:me@spencerthayer.com) or [open a support ticket](https://github.com/spencerthayer/TorchNoteJS/issues/new)*.
+- Once your app is built it's time to use it, click the `View it` link at the bottom.
 - Please see **usage** instructions for further details.
 
 ###Hard way:
+- [Install GIT](http://git-scm.com/book/en/Getting-Started-Installing-Git)
 - [Install Node.js](http://howtonode.org/how-to-install-nodejs)
+- [Install Heroku Toolbelt](https://toolbelt.heroku.com)
 - Clone the project:
 ```sh
-git clone http://github.com/spencerthayer/TorchNoteJS.git
+git clone http://github.com/spencerthayer/TorchNoteJS.git;cd TorchNoteJS;
 ```
 - Install TorchNoteJS dependencies:
 ```sh
@@ -41,47 +43,93 @@ open http://localhost:3700;npm start;
 ```
 - Deploy the TorchNoteJS server to Heroku:
 ```sh
-heroku create;git add .;git push heroku master;heroku restart;heroku open;heroku logs -t;
+heroku create;git add .;git push heroku master;heroku open;heroku logs -t;
 ```
-- **PROTIP:** The final command `heroku open;heroku logs -t;` starts the app and a running log in the terminal window. This allows you to monitor all I/O data passed by Heroku. If you know what you're looking for, you should be able to watch out for any suspect traffic.
+- **PROTIP:** The final command `heroku open;heroku logs -t;` opens the app in your browser and starts log mode. This allows you to monitor all your app's I/O data passed by Heroku. If you know what you're looking for, you should be able to watch out for any suspicious traffic.
 - Please see **usage** instructions for further details.
 
-##Usage
-- Discretely share the app URL with your contacts using private self destructing note services like [TMWSD](https://xn--uih.ws/), [Privnote](https://privnote.com/) or [OneShare](https://oneshar.es/create).
-- Please do not share the passphrase with your contacts online.
+## App Deletion
+(COMING SOON)
 
-####Common sense passphrase tips:
-- Don't ever leave the passphrase blank or keep its default value.
-- Don't use the same passphrase twice.
+##Usage
+An important thing to remember when using good encryption standards is to keep all communication hidden. In other words keep in mind that more than just the chat itself will need to be obscured. With TorchChatJS there are the following vulnerabilities: connection, operating system, browser, application URL and finally passphrase.
+
+###This is too much work.
+The TorchChatJS goal is not about making a one click solution to online communication. *Those do not exist.* Instead it is to be used as part of an encryption suite each part increasing your personal security.
+
+You can use TorchChatJS without any additional security steps and it will still encrypt your conversation but that doesn't mean your conversation was not intercepted.
+
+####Connection
+TorchChatJS encrypts all messages data through the server and is as strong as your passphrase. You should consider all communication through the app to be secure as long as you're confident with your passphrase.
+
+However if your connection is being monitored and your passphrase is weakit is possible for a skilled cryptographer to intercept your messages. You can add additional layers of security using an anonymous VPN and/or TOR.
+
+The integrity and stability of leading anonymous VPN software changes frequently so it is best to do your research on [which VPN to choose](http://torrentfreak.com/which-vpn-services-take-your-anonymity-seriously-2014-edition-140315/).
+
+Unlike a VPN Tor does not protect all of your computer's Internet traffic when you run it only THOSE applications that are properly configured to send their Internet traffic through Tor. Before using Tor please read up on [how to properlly use the service](https://torproject.org/about/overview.html.en).
+
+####Operating System
+All operating systems are prone to interception, howeever [Tails OS](https://tails.boum.org) is the only OS designed specificly to adddress this problem.
+
+Tails is a live operating system, that you can start on almost any computer from a DVD, USB stick, or SD card. It aims at preserving your privacy and anonymity, and helps you to:
+ - use the Internet anonymously and circumvent censorship
+ - all connections to the Internet are forced to go through the Tor network
+ - leave no trace on the computer you are using unless you ask it explicitly
+ - use state-of-the-art cryptographic tools to encrypt your files, emails and instant messaging
+
+####Browser
+Do not use Chrome, Firefox, Safari, Opera, Internet Explorer or any other public use browser. None of of these browsers are designed for the anonymous network traffic critical in secure E2EE communication.
+
+Use the [Tor Browser](https://www.torproject.org/projects/torbrowser.html.en). It is pre-configured to protect your privacy and anonymity on the web as long as you're browsing with the Tor Browser itself. Almost any other web browser configuration is likely to be unsafe to use with Tor.
+
+####Application URL
+
+Discretely share the app URL with your contacts using private self destructing note services like [TMWSD](https://xn--uih.ws/), [Privnote](https://privnote.com/) or [OneShare](https://oneshar.es/create).
+
+####Passphrase
+The last thing you and your contacts will want to to do is make sure that the E2EE communication is tied up neatly with a unique, easy-to-remember-but-impossible-to-crack passphrase or "[key]()". A key length of 80 characters is generally considered the minimum for strong security with symmetric encryption algorithms. 128-bit keys are commonly used and considered very strong.
+
+When you and your contacts have agreed upon a passphrase you each will need to put the passphrase into the `Passphrase:` field within the live TorchChatJS app. For maximum security use a [runnig cipher](http://wikipedia.org/wiki/Running_key_cipher) where the passphrase is changed based on logic throughout the conversation.
+
+#####Common sense passphrase tips:
+- Do not ever leave the passphrase blank.
+- Do not use the same passphrase twice.
 - SERIOUSLY, DO NOT REUSE A PASSPHRASE.
-- Don't use something shared on social media, such as Facebook or Twitter.
-- Don't use a sample passphrase (such as those below).
+- Do not use something shared on social media, such as Facebook or Twitter.
+- Do not use a sample passphrase (such as those below).
 - *Be creative.* The best passphrase is one that has never been used before.
 
-####Passphrase tips and suggestions:
-- Consider a passphrase of several (5 or more) random words strung together, e.g. "*strainer walking trusty comic giraffe*."
-- Make up a sentence that is relevant to you but is stated in such a way that it is not easily guessable, e.g., "*jazz is a passion, pizza too*."
-- Base your password on things relevant to you, but not easily discoverable.
+#####Passphrase suggestions:
+- Consider a passphrase of several (5 or more) random words strung together, e.g. "*pirate fighting a thirsty cosmic giraffe*."
+- Make up a sentence that is relevant to you but is stated in such a way that it is not easily guessable, e.g., "*thrash till death, pizza too*."
 - Consider using passphrase strengtheners like: broken grammar, incomplete words, uncommonly misspelled words or number and letter substitutions.
+- "[Schneier scheme](https://chneier.com/essay-246.html)" recommends that you create a passphrase ("*Man, those six flights of stairs to my New York apartment were killer.*") and then abstract it, possibly with the first letters. (“*M,tsfostmNYawk.*”)
+- Find a good passphrase manager like LastPass or my personal project [Passcloud](https://passcloud.me).
+- Use a pre-shared Passphase scheme (more below).
 
-####Complex Passphrase Pro-Tips:
-(COMING SOON)
+#####Pre-shared Passphrase Pro-Tips:
+- Do not share a passphrase with your contacts on the unencrypted Internet, sharing  a passphrase offline is *always* best. Clear text exchange of a passphrase would enable any interceptor to immediately learn the key to any encrypted data.
+- Share the passphrase using private self destructing note services like [TMWSD](https://xn--uih.ws/), [Privnote](https://privnote.com/) or [OneShare](https://oneshar.es/create).
+- Use a cryptovariable cipher scheme for your passphrase.
+ - The [one-time pad](http://wikipedia.org/wiki/One-time_pad) is the **only** encryption technique that has been mathematically proven to be uncrackable. It is however nearly impossible to use effectively. This is because the passphrase must be at least as long as the message for each message!
+ - Use a [Book cipher](http://www.drdobbs.com/security/the-book-cipher-algorithm/210603676) where the letters or words in some text or book are used a the passphrase to encode a message. A code of 238 21 56 02 76 32 89 67 can be sent in plaintext to the contact indicating page 238 word numbers 21, 56 etc. It is important to note that the books edition must match between all contacts.
+ - Use a newspaper time cipher where the first sentence in the headline article of todays edition of a popular newspaper or magazine is used as a passphrase.
+ - Use any variation of any [Substitution cipher](http://wikipedia.org/wiki/Substitution_cipher#Homophonic_substitution) as long as all contacts understand and agree.
 
-####Passphrases to avoid:
-- Common dictionary words
+#####Passphrases to avoid:
+- Common dictionary words.
 - Sequential letters or numbers (e.g. 1234567890, abcdefghij, qwertyuiop)
-- Trivial passwords (e.g. password, passwd,mypassword,p@ssw0rd)
-- Easily discoverable personal data (e.g., netID, names, birthday, address, pets)
-
-## Deletion
-(COMING SOON)
+- Trivial passwords (e.g. password, passwd,mypassword,p@ssw0rd).
+- Easily discoverable personal data (e.g., netID, names, birthday, address, pets).
 
 ##Questions
 ####Isn't Javascript supposed to have weak crypto services?
 Yeah it does. Totally. No one here is going to argue that NodeJS is better at security and encryption than SSL, except for when it isn't, *cough [Heartbleed](http://heartbleed.com/)*. Nor am I interested in a debate about how NodeJS cannot compete with many of the more robust server-side languages when it comes to security. No duh!
 
+This is exactly why TorchChatJS does not rely on the main server to exchange the cryptocipher. TorchChatJS uses AES256 encryption as it's the most secure and fastest encryption available. it doesn't bother attempting to secure the connection as that is impossible using JavaScript technology.
+
 ####So why would I use TorchNoteJS?
 Those other solutions **cost money**, are **complicated to develop** and can't be turned on at the drop of a hat. TorchNoteJS is a free solution that is very easy to deploy and more importantly permanently delete.
 
 ####Meh, why not just use ... ?
-Yes, there are other solutions for secure EE2E and I suggest you use them if you believe this application is not sufficient. If you do find a legitimate reason to be suspect of TorchNoteJS please create an issue because I really don't want to promote something that is broken.
+Yes, there are other solutions for secure EE2E and I suggest you use them if you believe this application is knot sufficient. If you do find a legitimate reason to be suspect of TorchNoteJS please create an issue because I really don't want to promote something that is broken.
