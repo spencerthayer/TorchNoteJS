@@ -1,9 +1,9 @@
 ![TorchNoteJS](https://raw.githubusercontent.com/spencerthayer/TorchNoteJS/master/public/img/torchchat-logo.png?raw=true "TorchNoteJS")
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/spencerthayer/TorchNoteJS)
-[![Build Status](https://travis-ci.org/spencerthayer/TorchNoteJS.svg?branch=master)](http://travis-ci.org/spencerthayer/TorchNoteJS)
-[![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/spencerthayer/TorchNoteJS)
-[![Dependencies Status](https://david-dm.org/spencerthayer/TorchNoteJS.png](https://david-dm.org/spencerthayer/TorchNoteJS)
+[![Build-Status](https://travis-ci.org/spencerthayer/TorchNoteJS.svg?branch=master)](http://travis-ci.org/spencerthayer/TorchNoteJS)
+[![Gitter-chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/spencerthayer/TorchNoteJS)
+[![Dependencies-Status](https://david-dm.org/spencerthayer/TorchNoteJS.png](https://david-dm.org/spencerthayer/TorchNoteJS)
 
 #TorchNoteJS
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/spencerthayer/TorchNoteJS?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
