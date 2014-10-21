@@ -56,14 +56,11 @@
 			</div>
 		</div>
 		<div class="form-group" role="form">
-			<label class="title" for="chatInput">Type here...</label>
-			<textarea class="form-control" rows="3" id="chatInput" placeholder="Type here..."></textarea>
+			<textarea class="form-control" rows="1" id="chatInput" placeholder="Type here..."></textarea>
 			<!--input type="text" class="form-control" id="chatInput" placeholder="Type here..." /-->
+			<div class="note"><kbd>ctrl</kbd>+<kbd>enter</kbd> : line break</div>
 		</div>
 	</div>
-	
-	
-	
 <script>
 	$(function () {
 		$('#chatTab a:first').tab('show')
@@ -76,7 +73,8 @@
 		$("#chatwindow").append(div);
 		}, 100);
 	});
-	$('input').autogrow({onInitialize: true});
+	$('textarea').autogrow({onInitialize: true});
+	$('textarea').autogrow();
 </script>
 </body>
 </html>

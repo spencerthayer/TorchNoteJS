@@ -18,11 +18,9 @@ $(document).ready(function() {
 		var keyCode = (e.which ? e.which : e.keyCode); 
 		var message = $('#chatInput').val();
 		var nickname = $('#nickInput').val();
-		/*
 		if ((keyCode == 10 || keyCode == 13) && e.ctrlKey) { // press ctrl + enter: line break
-			$('#chatInput').val($('#chatInput').val() + '&#013;&#010');
+			$('#chatInput').val($('#chatInput').val() + '');
 		}
-		*/
 		if(keyCode == 13 && message != "") { // press enter: send message
 			passphrase = $('#key').val();
 			
