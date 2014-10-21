@@ -49,7 +49,20 @@ heroku create;git add .;git push heroku master;heroku open;heroku logs -t;
 - Please see **usage** instructions for further details.
 
 ## App Deletion
-(COMING SOON)
+Part of what makes TorchChatJS unique is that it is designed to be removed. A permanent app installation will makes the interception of your chats by way of code vulnerabilities likely. Do not trust long running TorchChatJS applications.
+
+###How to delete the app:
+- Go to your [Heroku App Panel](https://dashboard-next.heroku.com/apps/).
+- Click on the name of the app, e.g. *infinite-sierra-8516*.
+- In the App details page click the `Settings` option in the right hand of the top menu.
+- In the Settings page highlight and copy the app name, e.g. *infinite-sierra-8516*.
+- Scroll to the bottom of the page and click `Delete app..`
+- Upon the delete prompt past the name of the app, e.g. *infinite-sierra-8516*.
+
+- Command line to delete all Heroku apps (don't use if you use Heroku for other sites!)
+```sh
+for app in $(heroku apps); do heroku apps:destroy --app $app --confirm $app; done
+```
 
 ##Usage
 An important thing to remember when using good encryption standards is to keep all communication hidden. In other words keep in mind that more than just the chat itself will need to be obscured. With TorchChatJS there are the following vulnerabilities: connection, operating system, browser, application URL and finally passphrase.
