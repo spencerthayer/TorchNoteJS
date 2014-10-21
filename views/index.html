@@ -42,22 +42,26 @@
 				<textarea id="out" class="form-control chatwindow" placeholder="Encrypted text..." rows="15" id="chatwindow" disabled></textarea>
 			</div>
 		</div>
-		<div class="form-group col-xs-2" role="form">
-				<label class="right" for="password">Passphrase:</label>
+		<div class="row">
+			<div class="form-group col-xs-2" role="form">
+					<label class="note right" for="password">Passphrase:</label>
+			</div>
+			<div class="form-group col-xs-10" role="form">
+					<input class="form-control" type="password" id="key" />
+					<div class="passverdict"></div>
+					<div class="passdetails"></div>
+			</div>
 		</div>
-		<div class="form-group col-xs-10" role="form">
-				<input class="form-control" type="password" id="key" />
-				<div class="passverdict"></div>
-				<div class="passdetails"></div>
-		</div>
-		<div class="form-group col-xs-2" role="form">
-			<label class="sr-only" for="nickInput">Enter Nickname</label>
-			<input type="text" class="form-control" id="nickInput" placeholder="Enter Nickname" />
-
-		</div>
-		<div class="form-group col-xs-10" role="form">
-			<textarea class="form-control" rows="1" id="chatInput" placeholder="Type here..."></textarea>
-			<div class="note"><kbd>ctrl</kbd>+<kbd>enter</kbd> : line break</div>
+		<div class="row">
+			<div class="form-group col-xs-2" role="form">
+				<label class="sr-only" for="nickInput">Enter Nickname</label>
+				<input type="text" class="form-control" id="nickInput" placeholder="Enter Nickname" />
+	
+			</div>
+			<div class="form-group col-xs-10" role="form">
+				<textarea class="form-control" rows="1" id="chatInput" placeholder="Type here..."></textarea>
+				<div class="note"><kbd>ctrl</kbd>+<kbd>enter</kbd> : line break</div>
+			</div>
 		</div>
 	</div>
 <script>
