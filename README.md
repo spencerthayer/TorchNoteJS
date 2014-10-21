@@ -39,7 +39,7 @@ npm install
 ```
 - Run local test:
 ```sh
-open http://localhost:3700;npm start;
+(sleep 1;open http://localhost:3700) & npm start;
 ```
 - Deploy the TorchNoteJS server to Heroku:
 ```sh
