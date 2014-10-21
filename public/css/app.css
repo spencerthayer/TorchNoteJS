@@ -46,6 +46,7 @@ textarea {
     letter-spacing: 1px;
     }
 .note {
+    float: right;
     font-size: 12px;
     font-weight: 700;
     color: #959595;
