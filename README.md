@@ -26,32 +26,57 @@ TorchNoteJS tries to alleviate this by only running when you need it. When sensi
 - Please see **usage** instructions for further details.
 
 ###Hard way:
+####Prerequisites:
 - [Install GIT](http://git-scm.com/book/en/Getting-Started-Installing-Git)
 - [Install Node.js](http://howtonode.org/how-to-install-nodejs)
 - [Install Heroku Toolbelt](https://toolbelt.heroku.com)
+
+####Step One: Install TorchNoteJS on Localhost and test
 - Clone the project:
 ```sh
 git clone http://github.com/spencerthayer/TorchNoteJS.git;cd TorchNoteJS;
 ```
 - Install TorchNoteJS dependencies:
 ```sh
-npm install
+npm install;
 ```
 - Run local test:
 ```sh
 (sleep 1;open http://localhost:3700) & npm start;
 ```
-- Deploy the TorchNoteJS server to Heroku:
+**ONE SHOT:**
 ```sh
-heroku create;git add .;git push heroku master;heroku open;heroku logs -t;
+git clone http://github.com/spencerthayer/TorchNoteJS.git;cd TorchNoteJS;npm install;(sleep 1;open http://localhost:3700) & npm start;
 ```
-- **PROTIP:** The final command `heroku open;heroku logs -t;` opens the app in your browser and starts log mode. This allows you to monitor all your app's I/O data passed by Heroku. If you know what you're looking for, you should be able to watch out for any suspicious traffic.
+
+####Step Two: Deploy TorchNoteJS to Heroku:
+
+- Create the Heroku app:
+```sh
+heroku create;
+```
+- Add TorchNoteJS to Heroku Git:
+
+```sh
+git add .;
+```
+- Push TorchNoteJS to Heroku:
+```sh
+git push heroku master;
+```
+- Your TorchNoteJS application is now live so open it:
+```sh
+heroku open;heroku logs -t;
+```
 - Please see **usage** instructions for further details.
 
-QUICK START:
+**ONE SHOT:**
 ```sh
 git clone http://github.com/spencerthayer/TorchNoteJS.git;cd TorchNoteJS;npm install;heroku create;git add .;git push heroku master;heroku open;heroku logs -t;
 ```
+
+---
+**PROTIP:** The final command `heroku open;heroku logs -t;` opens the app in your browser and starts log mode. This allows you to monitor all your app's I/O data passed by Heroku. If you know what you're looking for, you should be able to watch out for any suspicious traffic
 
 ## App Deletion
 Part of what makes TorchChatJS unique is that it is designed to be removed. A permanent app installation will makes the interception of your chats by way of code vulnerabilities likely. Do not trust long running TorchChatJS applications.
