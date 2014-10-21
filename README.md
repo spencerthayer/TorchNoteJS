@@ -91,9 +91,9 @@ Part of what makes TorchChatJS unique is that it is designed to be removed. A pe
 - In the App details page click the `Settings` option in the right hand of the top menu.
 - In the Settings page highlight and copy the app name, e.g. *infinite-sierra-8516*.
 - Scroll to the bottom of the page and click `Delete app..`
-- Upon the delete prompt past the name of the app, e.g. *infinite-sierra-8516*.
+- Upon the delete prompt paste the name of the app, e.g. *infinite-sierra-8516*, and choose to `Delete the App`.
 
-- Command line to delete all Heroku apps (don't use if you use Heroku for other sites!)
+Below is the command to delete all Heroku apps (don't use if you use Heroku for other sites!):
 ```sh
 for app in $(heroku apps); do heroku apps:destroy --app $app --confirm $app; done
 ```
