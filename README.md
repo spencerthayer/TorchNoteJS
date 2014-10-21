@@ -44,7 +44,7 @@ npm install;
 ```sh
 (sleep 1;open http://localhost:3700) & npm start;
 ```
-**ONE SHOT:**
+**STEP ONE, ONE SHOT:**
 ```sh
 git clone http://github.com/spencerthayer/TorchNoteJS.git;cd TorchNoteJS;npm install;(sleep 1;open http://localhost:3700) & npm start;
 ```
@@ -70,11 +70,15 @@ heroku open;heroku logs -t;
 ```
 - Please see **usage** instructions for further details.
 
-**ONE SHOT:**
+**STEP TWO, ONE SHOT:**
 ```sh
-git clone http://github.com/spencerthayer/TorchNoteJS.git;cd TorchNoteJS;npm install;heroku create;git add .;git push heroku master;heroku open;heroku logs -t;
+heroku create;git add .;git push heroku master;heroku open;heroku logs -t;
 ```
 
+**COMPLETE SETUP ONE SHOT:**
+```sh
+git clone http://github.com/spencerthayer/TorchNoteJS.git;cd TorchNoteJS;heroku create;git add .;git push heroku master;heroku open;heroku logs -t;
+```
 ---
 **PROTIP:** The final command `heroku open;heroku logs -t;` opens the app in your browser and starts log mode. This allows you to monitor all your app's I/O data passed by Heroku. If you know what you're looking for, you should be able to watch out for any suspicious traffic
 
