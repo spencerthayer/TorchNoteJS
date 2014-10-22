@@ -191,3 +191,6 @@ The TorchNoteJS goal is not about making a one click solution to online communic
 
 ####Meh, why not just use ... ?
 Yes, there are other solutions for secure EE2E and I suggest you use them if you believe this application is knot sufficient. If you do find a legitimate reason to be suspect of TorchNoteJS please create an issue because I really don't want to promote something that is broken.
+
+---
+[![Go Hard](https://raw.githubusercontent.com/spencerthayer/TorchNoteJS/master/public/img/go_hard.jpg)](http://youtu.be/0llr2_g11mE)
