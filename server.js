@@ -5,6 +5,7 @@ var bot = require('./bot');
 var app = express();
 var port = 3700;
 
+app.listen(3700);
 app.set('views', __dirname + '/views');
 app.engine('html', require('ejs').renderFile);
 app.use(express.static(__dirname + '/public')); 

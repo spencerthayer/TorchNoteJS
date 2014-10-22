@@ -23,7 +23,7 @@ TorchNoteJS tries to alleviate this by only running when you need it. When sensi
 - Click "[Deploy to Heroku](https://heroku.com/deploy?template=https://github.com/spencerthayer/TorchNoteJS)" to build the app.
 - Add an optional app name, by default the name is random, and then click `Deploy for Free`.
 - There will then be a build phase with a **red/green** **pass/fail** monitor.
- - *If your build fails please contact [me@spencerthayer.com](mailto:me@spencerthayer.com) or [open a support ticket](https://github.com/spencerthayer/TorchNoteJS/issues/new)*.
+ - *If your build fails please contact [me@spencerthayer.com](mailto:me@spencerthayer.com), [open a support ticket](https://github.com/spencerthayer/TorchNoteJS/issues/new) or talk to me on [Gitter](https://gitter.im/spencerthayer/TorchNoteJS)*.
 - Once your app is built it's time to use it, click the `View it` link at the bottom.
 - Please see **usage** instructions for further details.
 
@@ -43,8 +43,13 @@ git clone http://github.com/spencerthayer/TorchNoteJS.git;cd TorchNoteJS;
 npm install;
 ```
 - Run local test:
+ - Node test:
 ```sh
 (sleep 1;open http://localhost:3700) & npm start;
+```
+ - Heroku Test
+```sh
+(sleep 1;open http://localhost:3700) & foreman start;
 ```
 **STEP ONE, ONE SHOT:**
 ```sh
@@ -81,6 +86,12 @@ heroku create;git add .;git push heroku master;heroku open;heroku logs -t;
 ```sh
 git clone http://github.com/spencerthayer/TorchNoteJS.git;cd TorchNoteJS;heroku create;git add .;git push heroku master;heroku open;heroku logs -t;
 ```
+
+**HEROKU CHANGES UPDATE ONE SHOT:**
+```sh
+heroku create;git add .;git push heroku master;heroku restart;heroku open;heroku logs -t;
+```
+
 ---
 **PROTIP:** The final command `heroku open;heroku logs -t;` opens the app in your browser and starts log mode. This allows you to monitor all your app's I/O data passed by Heroku. If you know what you're looking for, you should be able to watch out for any suspicious traffic
 
