@@ -104,6 +104,17 @@
 		</div>
 	</div>
 <script>
+	/** REMOVE LINE BREAK EVERY RETURN **/
+	$("#chatInput").keypress(function (e) {
+		if (e.keyCode != 13) return;
+		var msg = $("#chatInput").val().replace(/\n/g, "");
+		if (!util.isBlank(msg))
+		{
+			send(msg);
+			$("#chatInput").val("");
+		}
+		return false;
+	});
 	jQuery(document).ready(function(){       
 		var $t = $('div#in');
 		$t.animate({"scrollTop": $('div.#in')[0].scrollHeight}, "slow");
