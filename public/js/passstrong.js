@@ -16,16 +16,22 @@ jQuery(document).ready(function () {
     var options = {
             errors: [],
             // Options
-            minChar: 32,
+            minChar: 16,
             errorMessages: {
-                password_to_short: "The passphrase is too short!",
-                same_as_username: "Your passphrase cannot be the same as your nickname!"
+                //password_to_short: "The passphrase is too short!",
+                //same_as_username: "Your passphrase cannot be the same as your nickname!"
             },
-            scores: [10, 25, 50, 75, 100],
-            verdicts: ["Weak", "Normal", "Medium", "Strong", "Very Strong"],
+            scores: [-100, 35, 50, 75, 100],
+            verdicts: [
+                       "WARNING: Passphrase Insecure!",
+                       "Your Passphrase is: Weak",
+                       "Your Passphrase is: Moderate",
+                       "Your Passphrase is: Strong",
+                       "Your Passphrase is: Nearly Impossible to Crack"
+                       ],
             showVerdicts: true,
             raisePower: 1,
-            usernameField: "#username",
+            usernameField: "#nickInput",
             onLoad: undefined,
             onKeyUp: undefined,
             viewports: {
@@ -35,8 +41,8 @@ jQuery(document).ready(function () {
             },
             // Rules stuff
             ruleScores: {
-                wordNotEmail: -100,
-                wordLength: -100,
+                wordNotEmail: -5,
+                wordLength: -200,
                 wordSimilarToUsername: -100,
                 wordLowercase: 1,
                 wordUppercase: 3,
@@ -51,7 +57,7 @@ jQuery(document).ready(function () {
             rules: {
                 wordNotEmail: true,
                 wordLength: true,
-                wordSimilarToUsername: false,
+                wordSimilarToUsername: true,
                 wordLowercase: true,
                 wordUppercase: true,
                 wordOneNumber: true,
@@ -251,7 +257,7 @@ jQuery(document).ready(function () {
                     calculateScore.call(self, $el);
                 });
             },
-
+            /** /
             outputErrorList: function () {
                 this.each(function (idx, el) {
                     var output = '<ul class="error-list">',
@@ -279,6 +285,7 @@ jQuery(document).ready(function () {
                     }
                 });
             },
+            /**/
 
             addRule: function (name, method, score, active) {
                 this.each(function (idx, el) {
