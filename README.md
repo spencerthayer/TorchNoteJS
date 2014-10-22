@@ -4,7 +4,7 @@
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/spencerthayer/TorchNoteJS)
 [![Dependencies-Status](https://david-dm.org/spencerthayer/TorchNoteJS.png)](https://david-dm.org/spencerthayer/TorchNoteJS)
 [![Build-Status](https://travis-ci.org/spencerthayer/TorchNoteJS.svg?branch=master)](http://travis-ci.org/spencerthayer/TorchNoteJS)
-[![Bitdeli-Badge](https://d2weczhvl823v0.cloudfront.net/spencerthayer/TorchNoteJS/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![Bitdeli-Badge](https://cloudfront.net/spencerthayer/TorchNoteJS/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 #TorchNoteJS
 A single use end-to-end encrypted (E2EE) client-side chat using Node.js, Express, Socket.io and CryptoJS. 
