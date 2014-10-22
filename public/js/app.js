@@ -39,10 +39,6 @@ $(document).ready(function() {
 			
 			scrollToBottom();
 		}
-		if(keyCode == 13 && message == "") {
-			$('#chatInput').val('')
-			document.getElementById('chatInput').reset();
-		}
 	});
 	
 	// change the passphrase: rework all input box messages
