@@ -4,10 +4,10 @@ var bot = require('./bot');
 
 
 var app = express();
-//var port = 3700;
-var port = parseInt(process.argv[2]);
+var port = 3700;
+//var port = parseInt(process.argv[2]);
 
-app.listen(3700);
+//app.listen(3700);
 app.set('views', __dirname + '/views');
 app.engine('html', require('ejs').renderFile);
 app.use(express.static(__dirname + '/public')); 
@@ -17,8 +17,17 @@ var io = require('socket.io').listen(app.listen(port));
 //var randomUsername = '';
 var allUsers = [];
 io.sockets.on('connection', function (user) {
-	var x = Math.floor(Math.random() * 999) + 1;
-	var randomUsername = '#' + x;
+	//var x = Math.floor(Math.random() * 999) + 1;
+	//var randomUsername = '#' + x;
+	//var randomColor = "#000000".replace(/0/g,function(){return (~~(Math.random()*16)).toString(16);});
+	function randomColor() {
+		var color = (function lol(m, s, c) {
+				return s[m.floor(m.random() * s.length)] +
+				    (c && lol(m, s, c - 1));
+			    })(Math, /*'12345*/'6789ABCDEF', 4);
+		return color;
+	    }
+	var randomUsername = '#' + randomColor();
 	allUsers.push({id: user.id, name: randomUsername});
 	console.log('LINE - ' + JSON.stringify(allUsers));
 		

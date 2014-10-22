@@ -6,6 +6,7 @@
 	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 	<link href="/css/app.css" rel="stylesheet" type="text/css" />
 	<link href="/favicon.ico" rel="icon" type="image/x-icon" />
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300' rel='stylesheet' type='text/css'>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/cryptojs/cryptojs.js"></script>
@@ -14,13 +15,14 @@
 	<script type="text/javascript" src="/js/app.js"></script>
 	<script type="text/javascript" src="/js/passstrong.js"></script>
 	<script type="text/javascript" src="/js/autogrow.js"></script>
-	<script type="text/javascript" src="/js/stickyscroll.min.js"></script>
 </head>
 <body>
 	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color:#eee;border:0;">
 		<div class="container">
 			<div class="navbar-header">
-			  <img src="/img/torchchat-logo.png" height="40" alt="TorchNoteJS"/>
+				<a href="https://github.com/spencerthayer/TorchNoteJS/" target="_blank">
+					<img src="/img/torchchat-logo.png" height="40" alt="TorchNoteJS" />
+				</a>
 			</div>
 			<div class="collapse navbar-collapse">
 			  <ul class="nav navbar-nav right">
@@ -36,10 +38,13 @@
 		</ul>
 		<div class="row tab-content">
 			<div class="active col-md-12 tab-pane" id="decrypted">
-				<textarea id="in" class="form-control chatwindow" placeholder="Decrypted text..." rows="15" id="chatwindow"></textarea>
+				<!--textarea id="in" class="form-control chatwindow" placeholder="Decrypted text..." rows="15" id="chatwindow"></textarea-->
+				<div id="in" class="chat">
+					Decrypted text...
+				</div>
 			</div>
 			<div class="col-md-12 tab-pane" id="encrypted">
-				<textarea id="out" class="form-control chatwindow" placeholder="Encrypted text..." rows="15" id="chatwindow" disabled></textarea>
+				<textarea id="out" class="form-control chat" placeholder="Encrypted text..." rows="15" id="chatwindow" disabled></textarea>
 			</div>
 		</div>
 		<div class="row">
@@ -63,19 +68,22 @@
 				<div class="note"><kbd>ctrl</kbd>+<kbd>enter</kbd> : line break</div>
 			</div>
 		</div>
+		<div class="row">			
+			<iframe src="http://ghbtns.com/github-btn.html?user=spencerthayer&repo=TorchNoteJS&type=watch&count=true"
+  allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+			<iframe src="http://ghbtns.com/github-btn.html?user=spencerthayer&repo=TorchNoteJS&type=fork&count=true"
+  allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
+			<iframe src="http://ghbtns.com/github-btn.html?user=spencerthayer&type=follow&count=true"
+  allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"></iframe>
+	
+		</div>
 	</div>
 <script>
-	$(function () {
-		$('#chatTab a:first').tab('show')
-	})
-	$(function() {
-		$("#chatwindow").sticky();
-		var i = 0;
-		setInterval(function() {
-		var div = $("<div>").html("Row #" + i++);
-		$("#chatwindow").append(div);
-		}, 100);
+	jQuery(document).ready(function(){       
+		var $t = $('div#in');
+		$t.animate({"scrollTop": $('div.#in')[0].scrollHeight}, "slow");
 	});
+	$('.chat').scrollTop(1E10);
 	$('textarea').autogrow();
 </script>
 </body>
