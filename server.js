@@ -2,7 +2,9 @@ var cryptojs = require("cryptojs");
 var express = require("express");
 var bot = require('./bot');
 
+
 var app = express();
+//var port = 3700;
 var port = parseInt(process.argv[2]);
 
 app.listen(3700);
