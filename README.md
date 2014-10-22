@@ -5,7 +5,7 @@
 [![Dependencies-Status](https://david-dm.org/spencerthayer/TorchNoteJS.png)](https://david-dm.org/spencerthayer/TorchNoteJS)
 [![Build-Status](https://travis-ci.org/spencerthayer/TorchNoteJS.svg?branch=master)](http://travis-ci.org/spencerthayer/TorchNoteJS)
 
-#TorchNoteJS
+#TorchNoteJS [DEMO](http://torchnote.heroku.com)
 A single use end-to-end encrypted (E2EE) client-side chat using Node.js, Express, Socket.io and CryptoJS. 
 
 ##Why TorchNoteJS
