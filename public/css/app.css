@@ -76,15 +76,15 @@ textarea#chatInput {
     }
 .content {
     margin-top:60px;
-}
+    }
 .right {
     float:right;
-}
+    }
 .rightText {
     text-align: right;
-}
+    }
 .chat {
-    height:400px;
+    height:300px;
     margin: 16px 0;
     border-top: none;
     border-bottom: 1px solid #ddd;
@@ -94,7 +94,7 @@ textarea#chatInput {
     }
 .chat .row {
     padding: 4px 0;
-}
+    }
 .nickname {
     font-size: 75%;
     overflow: hidden;
@@ -108,3 +108,16 @@ textarea#chatInput {
 .error-list li {
     display: inline; 
     }
+@media(min-width:0px) and (max-width:991px) {
+    .rightText {
+        text-align: left;
+      }
+}
+@media(min-width:0px) and (max-width:401px) {
+    .rightText {
+        text-align: left;
+      }
+    .chat {
+        height:200px;
+       }
+}

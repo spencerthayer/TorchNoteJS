@@ -26,7 +26,7 @@ $(document).ready(function() {
 		if(keyCode == 13 && message != "") { // press enter: send message
 			passphrase = $('#key').val();
 			
-			var encryptedMessage = CryptoJS.AES.encrypt('<div class="row" style="background-color:' + username + '">' + '<div class="col-xs-1 rightText nickname">' + nickname + '</div><div class="col-xs-11 message">' + message + '</div>' + '</div>', passphrase);
+			var encryptedMessage = CryptoJS.AES.encrypt('<div class="row" style="background-color:' + username + '">' + '<div class="col-md-1 rightText nickname">' + nickname + '</div><div class="col-md-11 message">' + message + '</div>' + '</div>', passphrase);
 			var decryptedMessage = CryptoJS.AES.decrypt(encryptedMessage, passphrase).toString(CryptoJS.enc.Latin1);
 						
 			socket.emit('send', { /*user: username, */message: encryptedMessage.toString()});
