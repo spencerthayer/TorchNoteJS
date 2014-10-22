@@ -4,10 +4,12 @@ var bot = require('./bot');
 
 
 var app = express();
+/** PROPER PORT LISTENING ** /
 var port = 3700;
-//var port = parseInt(process.argv[2]);
-
-//app.listen(3700);
+/** HACK! TURN ON FOR HEROKU USE **/
+var port = parseInt(process.argv[2]);
+app.listen(3700);
+/**/
 app.set('views', __dirname + '/views');
 app.engine('html', require('ejs').renderFile);
 app.use(express.static(__dirname + '/public')); 
