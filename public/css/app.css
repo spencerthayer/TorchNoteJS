@@ -55,6 +55,7 @@ textarea#chatInput {
     color: #959595;
     text-transform: uppercase;
     letter-spacing: 1px;
+    margin: 3px;
     }
 .note kbd, .note a kbd {
     padding: 2px 4px;
