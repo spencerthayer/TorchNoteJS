@@ -9,7 +9,7 @@
 A single use end-to-end encrypted (E2EE) client-side chat using Node.js, Express, Socket.io and CryptoJS.
 
 ##Quick explanation:
-The correct way to use TorchNoteJS is to initiate your a free Heroku app you control every time you need to communicate or "chat" over encryption. Every new app generates a unique Heroku subdomain URL. Once the app is built the next step is to send the URL to your recipiemts using a TMWSD application. Ensure you are anonymizing yourself by using the TOR browser and an anonymous VPN. The recipient should also be using a similar setup. TorchChatJS is only as strong as the security of the passphrase, so be sure it is shared or agreed upon securely. Once communication is completed you will need to remove the app from Heroku to ensure all trace of the conversation is deleted with the domain. 
+The correct way to use TorchNoteJS is by creating and hosting your own Heroku apps. Once the app is built the next step is to send the URL to your recipients by using a TMWSD application. Ensure you are anonymizing your connection by using the TOR browser and an anonymous VPN. The recipient should also be using a similar setup. TorchChatJS is only as strong as the security of the passphrase, so be sure it is shared or agreed upon securely. Once communication is completed you will need to remove the app from Heroku to ensure all trace of the conversation is deleted with the domain. 
 
 ##Why TorchNoteJS
 
