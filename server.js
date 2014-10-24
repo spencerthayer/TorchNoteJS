@@ -1,13 +1,18 @@
-var cryptojs = require("cryptojs");
-var express = require("express");
-var bot = require('./bot');
+/** REQUIREMENTS **/
+var CryptoJS = require("crypto-js");
+var AES = require("crypto-js/aes");
+var SHA256 = require("crypto-js/sha256");
 
+var casual = require("casual");
+var express = require("express");
 var app = express();
+//var bot = require('./bot');
+
 /** PROPER PORT LISTENING ** /
 var port = 3700;
 /** HACK! TURN ON FOR HEROKU USE **/
-var port = parseInt(process.argv[2]);
 app.listen(3700);
+var port = parseInt(process.argv[2]);
 /**/
 app.set('views', __dirname + '/views');
 app.engine('html', require('ejs').renderFile);
@@ -53,9 +58,29 @@ io.sockets.on('connection', function (user) {
 
 // generate random bots sending random messages on a random interval
 var botsJob;
+var randomMessage = function () {
+	function randomBotString() {
+		var chars = "!@#$%^&*|\/?~=-0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
+		//var string_length = 128;
+		var string_length = (Math.random() * 512);
+		var randomstring = '';
+		for (var i=0; i<string_length; i++) {
+			var rnum = Math.floor(Math.random() * chars.length);
+			randomstring += chars.substring(rnum,rnum+1);
+			}
+		return randomstring;
+		}
+	var botusername = "username";
+	var sentence = "U2FsdGVkX" + randomBotString();
+	//var sentence = print(AES("Message"));
+	var details = {user: botusername, message: sentence };
+	var botData = details;
+	return botData;
+	/** NEW CODE END **/
+	}
 var randomChat = function () {
-	var randomInterval = Math.floor(Math.random() * 500) + 1;
-	io.sockets.emit('message', bot.randomMessage());
+	var randomInterval = Math.floor(Math.random() * 25000) + 1;
+	io.sockets.emit('message', randomMessage());
 	botsJob = setTimeout(randomChat, randomInterval);
 }
 randomChat();

@@ -21,7 +21,7 @@ jQuery(document).ready(function () {
                 //password_to_short: "The passphrase is too short!",
                 //same_as_username: "Your passphrase cannot be the same as your nickname!"
             },
-            scores: [-10, 35, 50, 75, 100],
+            scores: [0, 35, 45, 65, 100],
             verdicts: [
                        "WARNING: Passphrase Insecure!",
                        "Your Passphrase is: Weak",
