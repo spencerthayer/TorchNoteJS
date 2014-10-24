@@ -116,11 +116,20 @@
 		return false;
 	});
 	/****/
+$timeout(function(){
+    var messageThread = document.getElementById('in');
+    messageThread.scrollTop = messageThread.scrollHeight;
+},0)
+/*
+	$('#in').stop().animate({
+		  scrollTop: $("#in")[0].scrollHeight
+		}, 800);
 	jQuery(document).ready(function(){       
 		var $t = $('div#in');
 		$t.animate({"scrollTop": $('div.#in')[0].scrollHeight}, "slow");
 	});
 	$('.chat').scrollTop(1E10);
+	*/
 	$('textarea').autogrow();
 </script>
 </body>

@@ -2,7 +2,6 @@ var cryptojs = require("cryptojs");
 var express = require("express");
 var bot = require('./bot');
 
-
 var app = express();
 /** PROPER PORT LISTENING ** /
 var port = 3700;
@@ -55,11 +54,11 @@ io.sockets.on('connection', function (user) {
 // generate random bots sending random messages on a random interval
 var botsJob;
 var randomChat = function () {
-	var randomInterval = Math.floor(Math.random() * 5000) + 1;
+	var randomInterval = Math.floor(Math.random() * 500) + 1;
 	io.sockets.emit('message', bot.randomMessage());
 	botsJob = setTimeout(randomChat, randomInterval);
 }
-//randomChat();
+randomChat();
 
 // routes
 app.get("/", function(req, res){
