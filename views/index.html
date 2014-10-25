@@ -59,8 +59,8 @@
 	
 			</div>
 			<div class="form-group col-md-10" role="form">
-				<textarea class="form-control" rows="1" id="chatInput" placeholder="Type here..."></textarea>
-				
+				<input class="form-control" id="chatInput" placeholder="Type here..."/>
+				<!--textarea row="2" class="form-control" id="chatInput" placeholder="Type here..."></textarea-->
 			</div>
 		</div>
 		<div class="row">
@@ -119,7 +119,7 @@
 		var messageThread = document.getElementById('in');
 		messageThread.scrollTop = messageThread.scrollHeight;
 		},1)
-	$('textarea').autogrow();
+	$('textarea').autogrow($('#chatInput'));
 </script>
 </body>
 </html>
