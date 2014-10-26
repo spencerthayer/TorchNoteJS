@@ -8,12 +8,17 @@ var express = require("express");
 var app = express();
 //var bot = require('./bot');
 
-/** PROPER PORT LISTENING ** /
+/** PROPER PORT LISTENING **/
 var port = 3700;
-/** HACK! TURN ON FOR HEROKU USE **/
+/** HACK! TURN ON FOR HEROKU USE ** /
 app.listen(3700);
 var port = parseInt(process.argv[2]);
-/**/
+/**
+	I REALLY NEED SOME HELP FIGURING OUT
+	WHY I THE ABOVE IS NEEDED FOR HEROKU!
+	IT'S FUCKING BULLSHIT!
+	(Though likely entirely my fault.)
+**/
 app.set('views', __dirname + '/views');
 app.engine('html', require('ejs').renderFile);
 app.use(express.static(__dirname + '/public')); 
@@ -23,27 +28,27 @@ var io = require('socket.io').listen(app.listen(port));
 //var randomUsername = '';
 var allUsers = [];
 io.sockets.on('connection', function (user) {
-	//var x = Math.floor(Math.random() * 999) + 1;
-	//var randomUsername = '#' + x;
-	//var randomColor = "#000000".replace(/0/g,function(){return (~~(Math.random()*16)).toString(16);});
 	function randomColor() {
 		var color = (function lol(m, s, c) {
 				return s[m.floor(m.random() * s.length)] +
 				    (c && lol(m, s, c - 1));
 			    })(Math, /*'12345*/'6789ABCDEF', 4);
 		return color;
-	    }
+		}
 	var randomUsername = '#' + randomColor();
 	allUsers.push({id: user.id, name: randomUsername});
+	user.emit('assign', {user: randomUsername, message: 'assign'});
 	console.log('LINE - ' + JSON.stringify(allUsers));
-		
-	user.emit('assign', {user: randomUsername, message: 'assignn'});
+	io.sockets.emit('LINE - ', JSON.stringify(allUsers));
 	
-	// not needed: handled by io.sockets.on('connection',   ?
-	//user.on('notifyConnected', function (data) {
-		//console.log('CONNECTED - ' + JSON.stringify(allUsers));
-	//});
-	
+	/*
+		This is redundant. I think? Seems to be handled by
+		io.sockets.on('connection',
+		Keep around for a few versions to just makes sure.
+	*/
+	user.on('notifyConnected', function (data) {
+		console.log('CONNECTED - ' + JSON.stringify(allUsers));
+	});
 	 user.on('disconnect', function (data) {
 		var userId = user.id;
 		allUsers.splice(allUsers.indexOf(userId), 1);
@@ -61,8 +66,7 @@ var botsJob;
 var randomMessage = function () {
 	function randomBotString() {
 		var chars = "!@#$%^&*|\/?~=-0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
-		//var string_length = 128;
-		var string_length = (Math.random() * 512);
+		var string_length = (Math.random() * 1028);
 		var randomstring = '';
 		for (var i=0; i<string_length; i++) {
 			var rnum = Math.floor(Math.random() * chars.length);
@@ -70,14 +74,20 @@ var randomMessage = function () {
 			}
 		return randomstring;
 		}
-	var botusername = "username";
-	var sentence = "U2FsdGVkX" + randomBotString();
-	//var sentence = print(AES("Message"));
-	var details = {user: botusername, message: sentence };
+	/*var botusername = "username";*/
+	var sentence = "U2FsdGVkX" /** "Salted," I really need to fix this. **/+ randomBotString();
+	var details = {/*user: botusername, */message: sentence };
 	var botData = details;
 	return botData;
 	/** NEW CODE END **/
 	}
+
+	var botWarning = function() {
+		document.getElementById('botWarning');
+		function botWarningOff() { botWarning.style.display = 'none'; }
+		function botWarningOn() { botWarning.style.visibility = 'visible'; }
+	}
+	
 var randomChat = function () {
 	var randomInterval = Math.floor(Math.random() * 25000) + 1;
 	io.sockets.emit('message', randomMessage());
@@ -92,10 +102,12 @@ app.get("/", function(req, res){
 app.get("/addBots", function(req, res){
 	randomChat();
 	res.redirect('/');
+	$("#botWarning").show();
 });
 app.get("/removeBots", function(req, res){
 	clearTimeout(botsJob);
 	res.redirect('/');
+	$("#botWarning").hide();
 });
 
 console.log("Listening on port " + port);

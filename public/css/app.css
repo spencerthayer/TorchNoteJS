@@ -96,7 +96,7 @@ textarea#chatInput {
     padding: 4px 0;
     }
 .nickname {
-    font-size: 75%;
+    font-size: 80%;
     overflow: hidden;
     }
 .message {
@@ -121,3 +121,4 @@ textarea#chatInput {
         height:200px;
        }
 }
+nobr, .nobr { white-space:nowrap; }

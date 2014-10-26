@@ -78,10 +78,8 @@ $(document).ready(function() {
 	// when a new user joins the chat
 	socket.on('connected', function (data) {
 		console.log(data.user + ' - ' + data.message + ' - ' + data.users);
-		//var isYou = data.user == username;
-		//output.push(data.user + ' ' + data.message);
-		//$("#out").html(output.join("\n"));	
 		input.push('*** ' + data.user + ' ' + (isYou ? '(you)' : '') + ' ' + data.message + ' ****');
+		$("#out").html(output.join("\n"));	
 		$("#in").html(input.join("\n"));
 	});
 	
@@ -89,8 +87,8 @@ $(document).ready(function() {
 	socket.on('notifyDisconnected', function (data) {
 		console.log(data.user + ' - ' + data.message + ' - ' + data.users);
 		//output.push(data.user + ' ' + data.message);
-		//$("#out").html(output.join("\n"));	
 		input.push('*** ' + data.user + ' ' + data.message + ' ****');
+		$("#out").html(output.join("\n"));
 		$("#in").html(input.join("\n"));
 	});
 	

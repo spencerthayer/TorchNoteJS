@@ -21,7 +21,7 @@ jQuery(document).ready(function () {
                 //password_to_short: "The passphrase is too short!",
                 //same_as_username: "Your passphrase cannot be the same as your nickname!"
             },
-            scores: [0, 35, 45, 65, 100],
+            scores: [0, 30, 60, 80, 100],
             verdicts: [
                        "WARNING: Passphrase Insecure!",
                        "Your Passphrase is: Weak",
@@ -130,39 +130,39 @@ jQuery(document).ready(function () {
                 } else {
                     $verdict = $el.parent().find(".password-verdict");
                     if ($verdict.length === 0) {
-                        $verdict = $('<div class="password-verdict"></div>');
-                        $verdict.insertAfter($el);
+                        //$verdict = $('<div class="password-verdict"></div>');
+                        $verdict.insertBefore($el);
                     }
                 }
             }
 
             if (score < options.scores[0]) {
                 progressbar.addClass("progress-bar-danger").removeClass("progress-bar-warning").removeClass("progress-bar-success");
-                progressbar.find(".bar").css("width", "5%");
+                progressbar.find(".progress-bar").css("width", "20%");
                 if (options.showVerdicts) {
                     $verdict.text(options.verdicts[0]);
                 }
             } else if (score >= options.scores[0] && score < options.scores[1]) {
                 progressbar.addClass("progress-bar-danger").removeClass("progress-bar-warning").removeClass("progress-bar-success");
-                progressbar.find(".bar").css("width", "25%");
+                progressbar.find(".progress-bar").css("width", "40%");
                 if (options.showVerdicts) {
                     $verdict.text(options.verdicts[1]);
                 }
             } else if (score >= options.scores[1] && score < options.scores[2]) {
                 progressbar.addClass("progress-bar-warning").removeClass("progress-bar-danger").removeClass("progress-bar-success");
-                progressbar.find(".bar").css("width", "50%");
+                progressbar.find(".progress-bar").css("width", "60%");
                 if (options.showVerdicts) {
                     $verdict.text(options.verdicts[2]);
                 }
             } else if (score >= options.scores[2] && score < options.scores[3]) {
-                progressbar.addClass("progress-bar-warning").removeClass("progress-bar-danger").removeClass("progress-bar-success");
-                progressbar.find(".bar").css("width", "75%");
+                progressbar.addClass("progress-bar-danger").removeClass("progress-bar-danger").removeClass("progress-bar-success");
+                progressbar.find(".progress-bar").css("width", "80%");
                 if (options.showVerdicts) {
                     $verdict.text(options.verdicts[3]);
                 }
             } else if (score >= options.scores[3]) {
                 progressbar.addClass("progress-bar-success").removeClass("progress-bar-warning").removeClass("progress-bar-danger");
-                progressbar.find(".bar").css("width", "100%");
+                progressbar.find(".progress-bar").css("width", "100%");
                 if (options.showVerdicts) {
                     $verdict.text(options.verdicts[4]);
                 }
@@ -189,8 +189,12 @@ jQuery(document).ready(function () {
         },
 
         progressWidget = function () {
-            return '<div class="progress"><div class="bar"></div></div>';
-            //$("div.passdetails").replaceWith( '<div class="progress"><div class="bar"></div></div>' );
+            //return '<div class="progress">'+'<div class="progress-bar progress-bar-striped active" role="progressbar" style="width:100%;"><span class="password-verdict nobr">WARNING: Passphrase Insecure!</span></div>'+'</div>'
+            return '<div class="progress">'
+            +
+            '<div class="progress-bar progress-bar-danger" role="progressbar" style="width:100%;"><span class="password-verdict nobr">WARNING: Passphrase Insecure!</span></div>'
+            +
+            '</div>'
         },
 
         methods = {
@@ -215,16 +219,20 @@ jQuery(document).ready(function () {
                     });
 
                     progressbar = $(progressWidget());
+                    /**/
                     if (allOptions.viewports.progress) {
-                        $(allOptions.viewports.progress).append(progressbar);
-                    } else {
+                       // $(allOptions.viewports.progress).append(progressbar);
+                    }
+                    /**/
+                    else {
                         progressbar.insertAfter($el);
                     }
-                    progressbar.find(".bar").css("width", "0%");
+                    /**/
+                    //progressbar.find(".progress-bar").css("width", "100%");
                     $el.data("pwstrength").progressbar = progressbar;
 
                     if (allOptions.showVerdicts) {
-                        verdict = $('<div class="password-verdict">' + allOptions.verdicts[0] + '</div>');
+                        //verdict = $('<div class="password-verdict">' + allOptions.verdicts[0] + '</div>');
                         if (allOptions.viewports.verdict) {
                             $(allOptions.viewports.verdict).append(verdict);
                         } else {
@@ -237,16 +245,17 @@ jQuery(document).ready(function () {
                     }
                 });
             },
-
+            /** FIGURE THIS OUT LATER
             destroy: function () {
                 this.each(function (idx, el) {
                     var $el = $(el);
                     $el.parent().find("div.password-verdict").remove();
-                    $el.parent().find("div.progress").remove();
+                    $el.parent().find("div.progress-bar").remove();
                     $el.parent().find("ul.error-list").remove();
                     $el.removeData("pwstrength");
                 });
             },
+            */
 
             forceUpdate: function () {
                 var self = this;

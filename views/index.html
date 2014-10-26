@@ -41,6 +41,7 @@
 			<div class="col-md-12 tab-pane" id="encrypted">
 				<textarea id="out" class="form-control chat" placeholder="Encrypted text..." rows="15" id="chatwindow" disabled></textarea>
 			</div>
+			<div class="alert alert-warning" role="alert" id="botWarning" style="padding:2px 4px;display:none;">Obfuscating chat record with randomized injection.</div>
 		</div>
 		<div class="row">
 			<div class="form-group col-md-2" role="form">
@@ -48,8 +49,9 @@
 			</div>
 			<div class="form-group col-md-10" role="form">
 					<input class="form-control" type="password" id="key" />
-					<div class="passverdict"></div>
-					<div class="passdetails"></div>
+					<div class="progress">
+						
+					</div>
 			</div>
 		</div>
 		<div class="row">

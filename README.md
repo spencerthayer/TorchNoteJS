@@ -8,8 +8,15 @@
 #TorchNoteJS 0.0.12 [DEMO](http://torchnote.heroku.com)
 A single use end-to-end encrypted (E2EE) client-side chat using Node.js, Express, Socket.io and CryptoJS.
 
+##Coming with 0.0.13
+> Better information. User joins, exists and bot obfuscation alerts. 
+
 ##New to 0.0.12
-BOTS! Now chat bots will inject random AES code into the chat to obfustace the actual conversation.
+> BOTS! Now chat bots will inject random AES code into the chat to obfustace the actual conversation.
+
+##New to 0.0.12
+> INCREASED SECURITY! Removed CDN dependencies. All scripts are localized increasing security. All EAS data origin is checked. Minor improvement but will be important when I introduct Bots next update. 
+
 
 ##Quick explanation:
 The correct way to use TorchNoteJS is by creating and hosting your own Heroku apps. Once the app is built the next step is to send the URL to your recipients by using a TMWSD application. Ensure you are anonymizing your connection by using the TOR browser and an anonymous VPN. The recipient should also be using a similar setup. TorchChatJS is only as strong as the security of the passphrase, so be sure it is shared or agreed upon securely. Once communication is completed you will need to remove the app from Heroku to ensure all trace of the conversation is deleted with the domain. 

@@ -1,7 +1,7 @@
 {
   "name": "TorchNoteJS",
   "author": "Spencer Thayer",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "A single use end-to-end encrypted (E2EE) client-side chat using Node.js, Express, Socket.io and CryptoJS.",
   "repository": "https://github.com/spencerthayer/TorchNoteJS.git",
   "logo": "https://raw.githubusercontent.com/spencerthayer/TorchNoteJS/master/public/img/TorchChat-square.png",

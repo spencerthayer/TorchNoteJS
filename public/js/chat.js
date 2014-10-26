@@ -20,7 +20,16 @@ window.onload = function() {
             console.log("There is a problem:", data);
         }
     });
-    /** Irrelevant, I will need to delete this later. ** /
+    /**
+        Irrelevant, nicknames are now passed
+        through the message as if they are a
+        part of the string.
+        This ensures that nicks are not detected
+        as unique entities apart from the entire message.
+        Also it is was just way easier to handle
+        a single AES string rather than several decryptions.
+        I will need to delete this later.
+    ** /
     sendButton.onclick = function() {
         if(name.value == "") {
             alert("Please type your name!");
