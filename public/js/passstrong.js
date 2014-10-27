@@ -190,7 +190,7 @@ jQuery(document).ready(function () {
 
         progressWidget = function () {
             //return '<div class="progress">'+'<div class="progress-bar progress-bar-striped active" role="progressbar" style="width:100%;"><span class="password-verdict nobr">WARNING: Passphrase Insecure!</span></div>'+'</div>'
-            return '<div class="progress">'
+            return '<div class="progress" style="border-radius:0 0 4px 4px;">'
             +
             '<div class="progress-bar progress-bar-danger" role="progressbar" style="width:100%;"><span class="password-verdict nobr">WARNING: Passphrase Insecure!</span></div>'
             +
