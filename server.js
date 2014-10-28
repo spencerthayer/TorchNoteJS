@@ -31,11 +31,10 @@ io.sockets.on('connection', function (user) {
 		return color;
 		}
 	var randomUsername = '#' + randomColor();
-	allUsers.push({id: user.id, color: randomUsername});
+	allUsers.push({id: user.id, name: randomUsername});
 	user.emit('assign', {user: randomUsername, message: 'assign'});
 	console.log('LINE - ' + JSON.stringify(allUsers));
 	io.sockets.emit('LINE - ', JSON.stringify(allUsers));
-	io.sockets.emit('message', JSON.stringify(allUsers));
 	
 	/*
 		This is redundant. I think? Seems to be handled by
@@ -59,7 +58,6 @@ io.sockets.on('connection', function (user) {
 
 // generate random bots sending random messages on a random interval
 var botsJob;
-
 var randomMessage = function () {
 	function randomBotString() {
 		var chars = "!@#$%^&*|\/?~=-0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
@@ -71,29 +69,20 @@ var randomMessage = function () {
 			}
 		return randomstring;
 		}
-	
-	
 	/*var botusername = "username";*/
 	var sentence = "U2FsdGVkX" /** "Salted," I really need to fix this. **/+ randomBotString();
 	var details = {/*user: botusername, */message: sentence };
 	var botData = details;
 	return botData;
-	botAlert();
 	/** NEW CODE END **/
 	}
-	/*
-	var botWarning = function() {
-		document.getElementById('botWarning');
-		function botWarningOff() { botWarning.style.display = 'none'; }
-		function botWarningOn() { botWarning.style.visibility = 'visible'; }
-	}
-	*/
-	var randomChat = function () {
-		var randomInterval = Math.floor(Math.random() * 25000) + 1;
-		io.sockets.emit('message', randomMessage());
-		botsJob = setTimeout(randomChat, randomInterval);
-	}
-	randomChat();
+	
+var randomChat = function () {
+	var randomInterval = Math.floor(Math.random() * 25000) + 1;
+	io.sockets.emit('message', randomMessage());
+	botsJob = setTimeout(randomChat, randomInterval);
+}
+randomChat();
 
 // routes
 app.get("/", function(req, res){
