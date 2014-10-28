@@ -8,16 +8,12 @@ var express = require("express");
 var app = express();
 //var bot = require('./bot');
 
-/** PROPER PORT LISTENING **/
-// var port = 3700;
-// app.listen(3700);
+/** PROPER PORT LISTENING ** /
+var port = 3700;
+/** HACK! TURN ON FOR HEROKU USE **/
+app.listen(3700);
 var port = parseInt(process.argv[2]);
-/**
-	I REALLY NEED SOME HELP FIGURING OUT
-	WHY I THE ABOVE IS NEEDED FOR HEROKU!
-	IT'S FUCKING BULLSHIT!
-	(Though likely entirely my fault.)
-**/
+/**/
 app.set('views', __dirname + '/views');
 app.engine('html', require('ejs').renderFile);
 app.use(express.static(__dirname + '/public')); 
