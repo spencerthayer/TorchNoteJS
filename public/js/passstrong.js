@@ -31,7 +31,7 @@ jQuery(document).ready(function () {
                        "Passphrase: Very Strong",
                        "Passphrase: Awesome",
                        "Passphrase: Hard to Crack",
-                       "Passphrase: Ni-Impossible to Crack",
+                       "Passphrase: Ni-Impossible to Crack"
                        ],
             showVerdicts: true,
             raisePower: 1,
