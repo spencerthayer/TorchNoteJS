@@ -160,7 +160,10 @@ jQuery(document).ready(function () {
 
             progressbar.children().removeClass(allClasses);
             progressbar.children().addClass(classList[scoreIdx]);
+            /*
             progressbar.children().css('width', 20 * (scoreIdx + 1) + '%' );
+            */
+            progressbar.children().css('width', 12.5 * (scoreIdx + 1) + '%' );
             if (options.showVerdicts) {
                   $verdict.text(options.verdicts[scoreIdx]);
             }
@@ -188,7 +191,13 @@ jQuery(document).ready(function () {
         progressWidget = function () {
             return '<div class="progress" style="border-radius:0 0 4px 4px;">'
             +
-            '<div class="progress-bar progress-bar-danger" role="progressbar" style="width:100%;"><span class="password-verdict nobr">WARNING: Passphrase Insecure!</span></div>'
+            '<div class="progress-bar progress-bar-danger" role="progressbar" style="width:100%;">'
+            +
+            '<span class="password-verdict warning nobr">'
+            +
+            'WARNING: Passphrase Insecure!'
+            +
+            '</span></div>'
             +
             '</div>'
         },
