@@ -124,6 +124,16 @@ jQuery(document).ready(function () {
                 progressbar = options.progressbar,
                 $verdict;
 
+            var classList = [  
+                "progress-bar-danger",
+                "progress-bar-danger",
+                "progress-bar-warning",
+                "progress-bar-above-average",
+                "progress-bar-success"
+            ];
+
+            var allClasses = "progress-bar-danger progress-bar-warning progress-bar-success";
+
             if (options.showVerdicts) {
                 if (options.viewports.verdict) {
                     $verdict = $(options.viewports.verdict).find(".password-verdict");
@@ -136,36 +146,14 @@ jQuery(document).ready(function () {
                 }
             }
 
-            if (score < options.scores[0]) {
-                progressbar.addClass("progress-bar-danger").removeClass("progress-bar-warning").removeClass("progress-bar-success");
-                progressbar.find(".progress-bar").css("width", "20%");
-                if (options.showVerdicts) {
-                    $verdict.text(options.verdicts[0]);
-                }
-            } else if (score >= options.scores[0] && score < options.scores[1]) {
-                progressbar.addClass("progress-bar-danger").removeClass("progress-bar-warning").removeClass("progress-bar-success");
-                progressbar.find(".progress-bar").css("width", "40%");
-                if (options.showVerdicts) {
-                    $verdict.text(options.verdicts[1]);
-                }
-            } else if (score >= options.scores[1] && score < options.scores[2]) {
-                progressbar.addClass("progress-bar-warning").removeClass("progress-bar-danger").removeClass("progress-bar-success");
-                progressbar.find(".progress-bar").css("width", "60%");
-                if (options.showVerdicts) {
-                    $verdict.text(options.verdicts[2]);
-                }
-            } else if (score >= options.scores[2] && score < options.scores[3]) {
-                progressbar.addClass("progress-bar-danger").removeClass("progress-bar-danger").removeClass("progress-bar-success");
-                progressbar.find(".progress-bar").css("width", "80%");
-                if (options.showVerdicts) {
-                    $verdict.text(options.verdicts[3]);
-                }
-            } else if (score >= options.scores[3]) {
-                progressbar.addClass("progress-bar-success").removeClass("progress-bar-warning").removeClass("progress-bar-danger");
-                progressbar.find(".progress-bar").css("width", "100%");
-                if (options.showVerdicts) {
-                    $verdict.text(options.verdicts[4]);
-                }
+            var scoreIdx = 0;
+            for (scoreIdx = 0; score > options.scores[scoreIdx]; scoreIdx++);
+
+            progressbar.children().removeClass(allClasses);
+            progressbar.children().addClass(classList[scoreIdx]);
+            progressbar.children().css('width', 20 * (scoreIdx + 1) + '%' );
+            if (options.showVerdicts) {
+                  $verdict.text(options.verdicts[scoreIdx]);
             }
         },
 
@@ -266,7 +254,7 @@ jQuery(document).ready(function () {
                     calculateScore.call(self, $el);
                 });
             },
-            /** /
+
             outputErrorList: function () {
                 this.each(function (idx, el) {
                     var output = '<ul class="error-list">',
@@ -294,7 +282,6 @@ jQuery(document).ready(function () {
                     }
                 });
             },
-            /**/
 
             addRule: function (name, method, score, active) {
                 this.each(function (idx, el) {
