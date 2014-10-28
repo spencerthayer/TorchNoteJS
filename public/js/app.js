@@ -96,4 +96,9 @@ $(document).ready(function() {
 		$("#in").scrollTop($("#in")[0].scrollHeight - $("#in").height());
 		$("#out").scrollTop($("#out")[0].scrollHeight - $("#out").height());
 	}
+	
+	function setSizes() {
+		var containerHeight = $("#listContainer").height();
+		$("#myList").height(containerHeight - 18);
+		}
 });
