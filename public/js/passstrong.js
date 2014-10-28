@@ -129,9 +129,13 @@ jQuery(document).ready(function () {
                 "progress-bar-danger",
                 "progress-bar-danger",
                 "progress-bar-warning",
+<<<<<<< HEAD
                 "progress-bar-warning",
                 "",
                 "progress-bar-success",
+=======
+                "progress-bar-above-average",
+>>>>>>> FETCH_HEAD
                 "progress-bar-success"
             ];
 
@@ -154,7 +158,11 @@ jQuery(document).ready(function () {
 
             progressbar.children().removeClass(allClasses);
             progressbar.children().addClass(classList[scoreIdx]);
+<<<<<<< HEAD
             progressbar.children().css('width', 20 * (scoreIdx +1 ) + '%' );
+=======
+            progressbar.children().css('width', 20 * (scoreIdx + 1) + '%' );
+>>>>>>> FETCH_HEAD
             if (options.showVerdicts) {
                   $verdict.text(options.verdicts[scoreIdx]);
             }
@@ -180,6 +188,10 @@ jQuery(document).ready(function () {
         },
 
         progressWidget = function () {
+<<<<<<< HEAD
+=======
+            //return '<div class="progress">'+'<div class="progress-bar progress-bar-striped active" role="progressbar" style="width:100%;"><span class="password-verdict nobr">WARNING: Passphrase Insecure!</span></div>'+'</div>'
+>>>>>>> FETCH_HEAD
             return '<div class="progress" style="border-radius:0 0 4px 4px;">'
             +
             '<div class="progress-bar progress-bar-danger" role="progressbar" style="width:100%;"><span class="password-verdict nobr">WARNING: Passphrase Insecure!</span></div>'
@@ -256,7 +268,11 @@ jQuery(document).ready(function () {
                     calculateScore.call(self, $el);
                 });
             },
+<<<<<<< HEAD
             /*
+=======
+
+>>>>>>> FETCH_HEAD
             outputErrorList: function () {
                 this.each(function (idx, el) {
                     var output = '<ul class="error-list">',
@@ -284,7 +300,11 @@ jQuery(document).ready(function () {
                     }
                 });
             },
+<<<<<<< HEAD
             */
+=======
+
+>>>>>>> FETCH_HEAD
             addRule: function (name, method, score, active) {
                 this.each(function (idx, el) {
                     var options = $(el).data("pwstrength");
