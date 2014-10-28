@@ -21,14 +21,16 @@ jQuery(document).ready(function () {
                 //password_to_short: "The passphrase is too short!",
                 //same_as_username: "Your passphrase cannot be the same as your nickname!"
             },
-            scores: [0, 30, 60, 80, 100, 120],
+            scores: [0, 20, 40, 60, 80, 100, 120, 140],
             verdicts: [
                        "WARNING: Passphrase Insecure!",
                        "Your Passphrase is: Weak",
                        "Your Passphrase is: Decent",
                        "Your Passphrase is: Above Average",
-                       "Your Passphrase is: Awesome!",
-                       "Your Passphrase is: Nearly Impossible to Crack"
+                       "Your Passphrase is: Strong",
+                       "Your Passphrase is: Very Strong",
+                       "Your Passphrase is: Awesome",
+                       "Your Passphrase is: Nearly Impossible to Crack",
                        ],
             showVerdicts: true,
             raisePower: 1,
@@ -127,10 +129,11 @@ jQuery(document).ready(function () {
 
             var classList = [  
                 "progress-bar-danger",
+                "progress-bar-danger",
                 "progress-bar-warning",
                 "progress-bar-warning",
                 "progress-bar-above-average",
-                "progress-bar-success",
+                "progress-bar-above-average",
                 "progress-bar-success",
                 "progress-bar-success"
             ];
