@@ -135,6 +135,8 @@ jQuery(document).ready(function () {
                 "progress-bar-above-average",
                 "progress-bar-above-average",
                 "progress-bar-success",
+                "progress-bar-success",
+                "progress-bar-success",
                 "progress-bar-success"
             ];
 
