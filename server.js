@@ -9,9 +9,8 @@ var app = express();
 //var bot = require('./bot');
 
 /** PROPER PORT LISTENING **/
-var port = 3700;
-/** HACK! TURN ON FOR HEROKU USE ** /
-app.listen(3700);
+// var port = 3700;
+// app.listen(3700);
 var port = parseInt(process.argv[2]);
 /**
 	I REALLY NEED SOME HELP FIGURING OUT
