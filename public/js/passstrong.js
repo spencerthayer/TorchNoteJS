@@ -160,9 +160,7 @@ jQuery(document).ready(function () {
 
             progressbar.children().removeClass(allClasses);
             progressbar.children().addClass(classList[scoreIdx]);
-            /*
-            progressbar.children().css('width', 20 * (scoreIdx + 1) + '%' );
-            */
+            /* progressbar.children().css('width', 20 * (scoreIdx + 1) + '%' ); */
             progressbar.children().css('width', 12.5 * (scoreIdx + 1) + '%' );
             if (options.showVerdicts) {
                   $verdict.text(options.verdicts[scoreIdx]);
