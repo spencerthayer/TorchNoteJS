@@ -121,7 +121,9 @@ textarea#chatInput {
         height:200px;
        }
 }
+
 nobr, .nobr { white-space:nowrap; }
+
 .warning {
     position: absolute;
     margin-left: auto;
