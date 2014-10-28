@@ -28,10 +28,12 @@
 		</div>
 	</div>
 	<div class="container content">
+		<!-- CHAT WINDOW SELECT -->
 		<ul class="nav nav-tabs" role="tablist" id="chatTab">
 		  <li class="active"><a href="#decrypted" role="tab" data-toggle="tab">Decrypted</a></li>
 		  <li><a href="#encrypted" role="tab" data-toggle="tab">Encrypted</a></li>
 		</ul>
+		<!-- CHAT WINDOWS -->
 		<div class="row tab-content">
 			<div class="active col-md-12 tab-pane" id="decrypted">
 				<div id="in" class="chat">
@@ -41,19 +43,8 @@
 			<div class="col-md-12 tab-pane" id="encrypted">
 				<textarea id="out" class="form-control chat" placeholder="Encrypted text..." rows="15" id="chatwindow" disabled></textarea>
 			</div>
-			<div class="alert alert-warning" role="alert" id="botWarning" style="padding:2px 4px;display:none;">Obfuscating chat record with randomized injection.</div>
 		</div>
-		<div class="row">
-			<div class="form-group col-md-2" role="form">
-					<label class="note right" for="password">Passphrase:</label>
-			</div>
-			<div class="form-group col-md-10" role="form">
-					<input class="form-control" type="password" id="key" />
-					<div class="progress">
-						
-					</div>
-			</div>
-		</div>
+		<!-- CHAT FUNCTIONS -->
 		<div class="row">
 			<div class="form-group col-md-2" role="form">
 				<label class="sr-only" for="nickInput">Enter Nickname</label>
@@ -65,16 +56,29 @@
 				<!--textarea row="2" class="form-control" id="chatInput" placeholder="Type here..."></textarea-->
 			</div>
 		</div>
+		<!-- PASSPHRASE CONTROLS -->
 		<div class="row">
-			<div class="col-md-6 note">
+			<div class="form-group col-md-2" role="form">
+					<label class="note right" for="password">Passphrase:</label>
+			</div>
+			<div class="form-group col-md-10" role="form">
+					<input class="form-control" type="password" id="key" style="border-radius:4px 4px 0 0;" />
+			</div>
+		</div>
+		<!-- ADDITIONAL TOOLS -->
+		<div class="row">	
+			<div class="col-md-2 note">
 				<a href="https://burnbox.io/" target="_blank">
 					<!-- TODO BUILD THIS FEATURE -->
 					<kbd>SEND A NOTE/FILE</kbd>
 				</a>
 			</div>
-			<div class="col-md-6 note rightText">
-				<kbd>ctrl</kbd>+<kbd>enter</kbd> : line break
+			<div class="form-group col-md-9">
+				<div class="alert alert-warning" role="alert" id="botWarning" style="padding:2px 4px;border-radius:0;display:none;">Obfuscating chat record with randomized injection.</div>
 			</div>
+			<!--div class="col-md-6 note rightText">
+				<kbd>ctrl</kbd>+<kbd>enter</kbd> : line break
+			</div-->
 		</div>
 		<!--
 			Are these off site hosted badges security risks?
@@ -125,6 +129,13 @@
 		messageThread.scrollTop = messageThread.scrollHeight;
 		},1)
 	$('textarea').autogrow($('#chatInput'));
+	botAlert = setTimeout(function() {
+	    $('#botWarning').show();
+	    setTimeout(function(){
+		$('#botWarning').hide();
+	    }, 1000);
+	}, 1000);
+	botAlert();
 </script>
 </body>
 </html>

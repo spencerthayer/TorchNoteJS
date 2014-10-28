@@ -21,12 +21,13 @@ jQuery(document).ready(function () {
                 //password_to_short: "The passphrase is too short!",
                 //same_as_username: "Your passphrase cannot be the same as your nickname!"
             },
-            scores: [0, 30, 60, 80, 100],
+            scores: [0, 30, 60, 80, 100, 120],
             verdicts: [
                        "WARNING: Passphrase Insecure!",
                        "Your Passphrase is: Weak",
                        "Your Passphrase is: Decent",
                        "Your Passphrase is: Above Average",
+                       "Your Passphrase is: Awesome!",
                        "Your Passphrase is: Nearly Impossible to Crack"
                        ],
             showVerdicts: true,
@@ -124,6 +125,18 @@ jQuery(document).ready(function () {
                 progressbar = options.progressbar,
                 $verdict;
 
+            var classList = [  
+                "progress-bar-danger",
+                "progress-bar-danger",
+                "progress-bar-warning",
+                "progress-bar-warning",
+                "",
+                "progress-bar-success",
+                "progress-bar-success"
+            ];
+
+            var allClasses = "progress-bar-danger progress-bar-warning progress-bar-success";
+
             if (options.showVerdicts) {
                 if (options.viewports.verdict) {
                     $verdict = $(options.viewports.verdict).find(".password-verdict");
@@ -136,36 +149,14 @@ jQuery(document).ready(function () {
                 }
             }
 
-            if (score < options.scores[0]) {
-                progressbar.addClass("progress-bar-danger").removeClass("progress-bar-warning").removeClass("progress-bar-success");
-                progressbar.find(".progress-bar").css("width", "20%");
-                if (options.showVerdicts) {
-                    $verdict.text(options.verdicts[0]);
-                }
-            } else if (score >= options.scores[0] && score < options.scores[1]) {
-                progressbar.addClass("progress-bar-danger").removeClass("progress-bar-warning").removeClass("progress-bar-success");
-                progressbar.find(".progress-bar").css("width", "40%");
-                if (options.showVerdicts) {
-                    $verdict.text(options.verdicts[1]);
-                }
-            } else if (score >= options.scores[1] && score < options.scores[2]) {
-                progressbar.addClass("progress-bar-warning").removeClass("progress-bar-danger").removeClass("progress-bar-success");
-                progressbar.find(".progress-bar").css("width", "60%");
-                if (options.showVerdicts) {
-                    $verdict.text(options.verdicts[2]);
-                }
-            } else if (score >= options.scores[2] && score < options.scores[3]) {
-                progressbar.addClass("progress-bar-danger").removeClass("progress-bar-danger").removeClass("progress-bar-success");
-                progressbar.find(".progress-bar").css("width", "80%");
-                if (options.showVerdicts) {
-                    $verdict.text(options.verdicts[3]);
-                }
-            } else if (score >= options.scores[3]) {
-                progressbar.addClass("progress-bar-success").removeClass("progress-bar-warning").removeClass("progress-bar-danger");
-                progressbar.find(".progress-bar").css("width", "100%");
-                if (options.showVerdicts) {
-                    $verdict.text(options.verdicts[4]);
-                }
+            var scoreIdx = 0;
+            for (scoreIdx = 0; score > options.scores[scoreIdx]; scoreIdx++);
+
+            progressbar.children().removeClass(allClasses);
+            progressbar.children().addClass(classList[scoreIdx]);
+            progressbar.children().css('width', 20 * (scoreIdx +1 ) + '%' );
+            if (options.showVerdicts) {
+                  $verdict.text(options.verdicts[scoreIdx]);
             }
         },
 
@@ -189,8 +180,7 @@ jQuery(document).ready(function () {
         },
 
         progressWidget = function () {
-            //return '<div class="progress">'+'<div class="progress-bar progress-bar-striped active" role="progressbar" style="width:100%;"><span class="password-verdict nobr">WARNING: Passphrase Insecure!</span></div>'+'</div>'
-            return '<div class="progress">'
+            return '<div class="progress" style="border-radius:0 0 4px 4px;">'
             +
             '<div class="progress-bar progress-bar-danger" role="progressbar" style="width:100%;"><span class="password-verdict nobr">WARNING: Passphrase Insecure!</span></div>'
             +
@@ -266,7 +256,7 @@ jQuery(document).ready(function () {
                     calculateScore.call(self, $el);
                 });
             },
-            /** /
+            /*
             outputErrorList: function () {
                 this.each(function (idx, el) {
                     var output = '<ul class="error-list">',
@@ -294,8 +284,7 @@ jQuery(document).ready(function () {
                     }
                 });
             },
-            /**/
-
+            */
             addRule: function (name, method, score, active) {
                 this.each(function (idx, el) {
                     var options = $(el).data("pwstrength");
