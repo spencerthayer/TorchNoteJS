@@ -79,7 +79,7 @@ textarea#chatInput {
     padding-top:60px;
     }
 .chat {
-    min-height: 150px;
+    min-height: 50px;
     margin: 16px 0;
     border-top: none;
     border-bottom: 1px solid #ddd;
