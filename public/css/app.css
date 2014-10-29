@@ -50,7 +50,6 @@ textarea#chatInput {
     letter-spacing: 1px;
     }
 .note {
-    display: inline;
     font-size: 12px;
     font-weight: 700;
     color: #959595;
@@ -77,16 +76,10 @@ textarea#chatInput {
 	font-size:16px;
     }
 .content {
-    margin-top:60px;
-    }
-.right {
-    float:right;
-    }
-.rightText {
-    text-align: right;
+    padding-top:60px;
     }
 .chat {
-    height:300px;
+    min-height: 150px;
     margin: 16px 0;
     border-top: none;
     border-bottom: 1px solid #ddd;
@@ -108,17 +101,23 @@ textarea#chatInput {
 .error-list li {
     display: inline; 
     }
+
+.right {
+    float: right;
+}
+.rightext {
+    text-align: right;
+}
 @media(min-width:0px) and (max-width:991px) {
-    .rightText {
-        text-align: left;
+    .rightext {
+	text-align: left;
       }
+    .pass {
+	position: absolute;
+	top: 0px;
+    }
 }
 @media(min-width:0px) and (max-width:401px) {
-    .rightText {
-        text-align: left;
-      }
-    .chat {
-       }
 }
 
 nobr, .nobr { white-space:nowrap; }
@@ -133,4 +132,8 @@ nobr, .nobr { white-space:nowrap; }
     text-shadow: 0px 1px 3px rgba(0,0,0,0.5),
 		 0px 2px 5px rgba(0,0,0,0.25),
 		 0px 3px 7px rgba(0,0,0,0.1);
-} 
+}
+
+.selecttab {
+    padding: 5px 5px !important;
+}

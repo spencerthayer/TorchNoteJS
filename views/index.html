@@ -30,8 +30,8 @@
 	<div class="container content">
 		<!-- CHAT WINDOW SELECT -->
 		<ul class="nav nav-tabs" role="tablist" id="chatTab">
-		  <li class="active"><a href="#decrypted" role="tab" data-toggle="tab">Decrypted</a></li>
-		  <li><a href="#encrypted" role="tab" data-toggle="tab">Encrypted</a></li>
+		  <li class="active"><a href="#decrypted" role="tab" data-toggle="tab" class="selecttab">Decrypted</a></li>
+		  <li><a href="#encrypted" role="tab" data-toggle="tab" class="selecttab">Encrypted</a></li>
 		</ul>
 		<!-- CHAT WINDOWS -->
 		<div class="row tab-content">
@@ -59,7 +59,7 @@
 		<!-- PASSPHRASE CONTROLS -->
 		<div class="row">
 			<div class="form-group col-md-2" role="form">
-					<label class="note right" for="password">Passphrase:</label>
+					<div class="note rightext pass" for="password">Passphrase:</div>
 			</div>
 			<div class="form-group col-md-10" role="form">
 					<input class="form-control" type="password" id="key" style="border-radius:4px 4px 0 0;" />
@@ -109,26 +109,29 @@
 <script type="text/javascript" src="/socket.io/socket.io.js"></script>
 <script type="text/javascript" src="/js/aes.js"></script>
 <script type="text/javascript" src="/js/app.js"></script>
-<script type="text/javascript" src="/js/passstrong.js"></script>
 <script type="text/javascript" src="/js/autogrow.js"></script>
+<script type="text/javascript" src="/js/passstrong.js"></script>
 <script>
-	/** REMOVE LINE BREAK EVERY RETURN NOT WORKING SO HIDDEN FOR NOW ** /
-	$("#chatInput").keypress(function (e) {
-		if (e.keyCode != 13) return;
-		var msg = $("#chatInput").val().replace(/\n/g, "");
-		if (!util.isBlank(msg))
-		{
-			send(msg);
-			$("#chatInput").val("");
-		}
-		return false;
-	});
-	/****/
+	
+	function jqUpdateSize(){
+	    // Get the dimensions of the viewport
+	    var width = $(window).width();
+	    var height = $(window).height();
+	    // Do various things with that data.
+	    $('#jqWidth').html(width);
+	    $('#jqHeight').html(height);
+	    $('.chat').height( $(window).height() - 375 )
+	};
+	$(document).ready(jqUpdateSize);    // When the page first loads
+	$(window).resize(jqUpdateSize);     // When the browser changes size
+	
 	$timeout(function(){
 		var messageThread = document.getElementById('in');
 		messageThread.scrollTop = messageThread.scrollHeight;
 		},1)
+	
 	$('textarea').autogrow($('#chatInput'));
+	
 	botAlert = setTimeout(function() {
 	    $('#botWarning').show();
 	    setTimeout(function(){
@@ -136,7 +139,8 @@
 	    }, 1000);
 	}, 1000);
 	botAlert();
-	$(window).resize(function() { setSizes(); });
+
 </script>
+<div style="position:absolute;float:right;bottom:0;right:0;z-index:1000000;"><span id="jqWidth">0</span> x <span id="jqHeight">0</span></div>
 </body>
 </html>

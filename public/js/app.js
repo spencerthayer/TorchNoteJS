@@ -68,7 +68,6 @@ $(document).ready(function() {
 		scrollToBottom();
     });
 	
-	
 	socket.on('assign', function (data) {
 		console.log('assigned userId: ' + data.user);
 		username = data.user;
@@ -97,8 +96,4 @@ $(document).ready(function() {
 		$("#out").scrollTop($("#out")[0].scrollHeight - $("#out").height());
 	}
 	
-	function setSizes() {
-		var containerHeight = $("#listContainer").height();
-		$("#myList").height(containerHeight - 18);
-		}
 });

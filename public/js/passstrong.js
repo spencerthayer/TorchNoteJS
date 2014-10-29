@@ -233,7 +233,7 @@ jQuery(document).ready(function () {
                     /**/
                     //progressbar.find(".progress-bar").css("width", "100%");
                     $el.data("pwstrength").progressbar = progressbar;
-
+                    /*
                     if (allOptions.showVerdicts) {
                         //verdict = $('<div class="password-verdict">' + allOptions.verdicts[0] + '</div>');
                         if (allOptions.viewports.verdict) {
@@ -242,7 +242,7 @@ jQuery(document).ready(function () {
                             verdict.insertAfter($el);
                         }
                     }
-
+                    */
                     if ($.isFunction(allOptions.onLoad)) {
                         allOptions.onLoad();
                     }
@@ -269,7 +269,7 @@ jQuery(document).ready(function () {
                     calculateScore.call(self, $el);
                 });
             },
-            /*
+            /**
             outputErrorList: function () {
                 this.each(function (idx, el) {
                     var output = '<ul class="error-list">',
