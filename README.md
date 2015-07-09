@@ -203,7 +203,7 @@ Those other solutions **cost money**, are **complicated to develop** and can't b
 The TorchNoteJS goal is not about making a one click solution to online communication. *Those do not exist.* Instead it is to be used as part of an encryption suite each part increasing your personal security. You can use TorchNoteJS without any additional security steps and it will still encrypt your conversation but that doesn't mean your conversation was not intercepted.
 
 ####Meh, why not just use ... ?
-Yes, there are other solutions for secure EE2E and I suggest you use them if you believe this application is knot sufficient. If you do find a legitimate reason to be suspect of TorchNoteJS please create an issue because I really don't want to promote something that is broken.
+Yes, there are other solutions for secure EE2E and I suggest you use them if you believe this application is not sufficient. If you do find a legitimate reason to be suspect of TorchNoteJS please create an issue because I really don't want to promote something that is broken.
 
 ---
 [![Go Hard](https://raw.githubusercontent.com/spencerthayer/TorchNoteJS/master/public/img/go_hard.jpg)](http://youtu.be/0llr2_g11mE)
