@@ -1,9 +1,5 @@
 [![TorchNoteJS](https://raw.githubusercontent.com/spencerthayer/TorchNoteJS/master/public/img/torchchat-logo.png?raw=true "TorchNoteJS")](http://torchnote.heroku.com)
 
-| [![Build Status][travis-image]][travis-url] | [![NPM version][npm-version-image]][npm-url] | [![NPM downloads][npm-downloads-image]][npm-url] | [![Dependency Status][dependency-image]][dependency-url] |
-| ------- | ------- | ------- | ------- |
-| [![Coverage Status][coverage-image]][coverage-url] | [![Code Climate][climate-image]][climate-url] | [![Gittip][gittip-image]][gittip-url] | [![MIT License][license-image]][license-url]
-
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/spencerthayer/TorchNoteJS)
 [![Dependencies-Status](https://david-dm.org/spencerthayer/TorchNoteJS.png)](https://david-dm.org/spencerthayer/TorchNoteJS)
 [![Build-Status](https://travis-ci.org/spencerthayer/TorchNoteJS.svg?branch=master)](http://travis-ci.org/spencerthayer/TorchNoteJS)
@@ -215,21 +211,3 @@ Yes, there are other solutions for secure EE2E and I suggest you use them if you
 ##I DON'T GET ANY OF THIS!
 Perhaps then this might help.
 [![Go Hard](https://raw.githubusercontent.com/spencerthayer/TorchNoteJS/master/public/img/go_hard.jpg)](http://youtu.be/0llr2_g11mE)
-
-[license-image]: http://img.shields.io/badge/license-MIT-blue.svg?style=flat
-[license-url]: LICENSE
-[npm-url]: https://npmjs.org/package/waterlock
-[npm-version-image]: http://img.shields.io/npm/v/waterlock.svg?style=flat
-[npm-downloads-image]: http://img.shields.io/npm/dm/waterlock.svg?style=flat
-[travis-url]: https://travis-ci.org/davidrivera/waterlock
-[travis-image]: http://img.shields.io/travis/davidrivera/waterlock.svg?style=flat
-[dependency-image]: http://img.shields.io/gemnasium/davidrivera/waterlock.svg?style=flat
-[dependency-url]: https://gemnasium.com/davidrivera/waterlock
-[coverage-image]: http://img.shields.io/coveralls/davidrivera/waterlock/master.svg?style=flat
-[coverage-url]: https://coveralls.io/r/davidrivera/waterlock?branch=master
-[gittip-image]: http://img.shields.io/gittip/davidrivera.svg?style=flat
-[gittip-url]: https://www.gittip.com/davidrivera/
-[waterlock-image]: https://lh3.googleusercontent.com/-aThk1tYLSh0/U5fAM6NyB5I/AAAAAAAAH84/FKmmmQ80XWY/w611-h144-no/waterlock-header.png
-[waterlock-url]: http://waterlock.ninja/
-[climate-image]: http://img.shields.io/codeclimate/github/davidrivera/waterlock.svg?style=flat
-[climate-url]: https://codeclimate.com/github/davidrivera/waterlock
