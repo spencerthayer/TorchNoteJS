@@ -233,4 +233,3 @@ Perhaps then this might help.
 [waterlock-url]: http://waterlock.ninja/
 [climate-image]: http://img.shields.io/codeclimate/github/davidrivera/waterlock.svg?style=flat
 [climate-url]: https://codeclimate.com/github/davidrivera/waterlock
-[![Go Hard](https://raw.githubusercontent.com/spencerthayer/TorchNoteJS/master/public/img/go_hard.jpg)](http://youtu.be/0llr2_g11mE)
