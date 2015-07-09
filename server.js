@@ -8,15 +8,15 @@ var express = require("express");
 var app = express();
 //var bot = require('./bot');
 
-/** PROPER PORT LISTENING ** /
+/** NODEJS PORT LISTENING ** /
 var port = 3700;
-/** HACK! TURN ON FOR HEROKU USE **/
+/** HEROKU PORT LISTENING  **/
 app.listen(3700);
 var port = parseInt(process.argv[2]);
 /**/
 app.set('views', __dirname + '/views');
 app.engine('html', require('ejs').renderFile);
-app.use(express.static(__dirname + '/public')); 
+app.use(express.static(__dirname + '/public'));
 
 var io = require('socket.io').listen(app.listen(port));
 
@@ -35,7 +35,7 @@ io.sockets.on('connection', function (user) {
 	user.emit('assign', {user: randomUsername, message: 'assign'});
 	console.log('LINE - ' + JSON.stringify(allUsers));
 	io.sockets.emit('LINE - ', JSON.stringify(allUsers));
-	
+
 	/*
 		This is redundant. I think? Seems to be handled by
 		io.sockets.on('connection',
@@ -53,7 +53,7 @@ io.sockets.on('connection', function (user) {
 	// new message: broadcast it to all other users (excluding self)
     user.on('send', function (data) {
 		user.broadcast.emit('message', data);
-    });	
+    });
 });
 
 // generate random bots sending random messages on a random interval
@@ -76,7 +76,7 @@ var randomMessage = function () {
 	return botData;
 	/** NEW CODE END **/
 	}
-	
+
 var randomChat = function () {
 	var randomInterval = Math.floor(Math.random() * 25000) + 1;
 	io.sockets.emit('message', randomMessage());

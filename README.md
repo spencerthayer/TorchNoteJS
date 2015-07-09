@@ -1,35 +1,41 @@
 [![TorchNoteJS](https://raw.githubusercontent.com/spencerthayer/TorchNoteJS/master/public/img/torchchat-logo.png?raw=true "TorchNoteJS")](http://torchnote.heroku.com)
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/spencerthayer/TorchNoteJS)
+| [![Build Status][travis-image]][travis-url] | [![NPM version][npm-version-image]][npm-url] | [![NPM downloads][npm-downloads-image]][npm-url] | [![Dependency Status][dependency-image]][dependency-url] |
+| ------- | ------- | ------- | ------- |
+| [![Coverage Status][coverage-image]][coverage-url] | [![Code Climate][climate-image]][climate-url] | [![Gittip][gittip-image]][gittip-url] | [![MIT License][license-image]][license-url]
+
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/spencerthayer/TorchNoteJS)
 [![Dependencies-Status](https://david-dm.org/spencerthayer/TorchNoteJS.png)](https://david-dm.org/spencerthayer/TorchNoteJS)
 [![Build-Status](https://travis-ci.org/spencerthayer/TorchNoteJS.svg?branch=master)](http://travis-ci.org/spencerthayer/TorchNoteJS)
+
+
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/spencerthayer/TorchNoteJS)
 
 #TorchNoteJS 0.0.12 [DEMO](http://torchnote.heroku.com)
 A single use end-to-end encrypted (E2EE) client-side chat using Node.js, Express, Socket.io and CryptoJS.
 
 ##Coming with 0.0.13
-> Better information. User joins, exists and bot obfuscation alerts. 
+> Better information. Alerts for user joins and exists. Hide bot obfuscation.
 
 ##New to 0.0.12
-> BOTS! Now chat bots will inject random AES code into the chat to obfustace the actual conversation.
+> BOTS! Now chat bots will inject random AES code into the chat to obfuscate the actual conversation.
 
 ##New to 0.0.12
-> INCREASED SECURITY! Removed CDN dependencies. All scripts are localized increasing security. All EAS data origin is checked. Minor improvement but will be important when I introduct Bots next update. 
+> INCREASED SECURITY! Removed CDN dependencies. All scripts are localized increasing security. All EAS data origin is checked. Minor improvement but will be important when I introduce Bots next update.
 
 
 ##Quick explanation:
-The correct way to use TorchNoteJS is by creating and hosting your own Heroku apps. Once the app is built the next step is to send the URL to your recipients by using a TMWSD application. Ensure you are anonymizing your connection by using the TOR browser and an anonymous VPN. The recipient should also be using a similar setup. TorchChatJS is only as strong as the security of the passphrase, so be sure it is shared or agreed upon securely. Once communication is completed you will need to remove the app from Heroku to ensure all trace of the conversation is deleted with the domain. 
+The correct way to use TorchNoteJS is by creating and hosting your own Heroku apps. Once the app is built the next step is to send the URL to your recipients by using a TMWSD application. Ensure you are anonymizing your connection by using the TOR browser and an anonymous VPN. The recipient should also be using a similar setup. TorchChatJS is only as strong as the security of the passphrase, so be sure it is shared or agreed upon securely. Once communication is completed you will need to remove the app from Heroku to ensure all trace of the conversation is deleted with the domain.
 
 ##Why TorchNoteJS
 
-Propper encryption, unfortunately, isn't always easy to use. The inconvenience posed by encryption systems is counter-balanced by the protection against much more than overzealous law enforcement agents. Your Internet communications are vulnerable to a wide range of governmental and private adversaries in addition to law enforcement, whether it's the National Security Agency or a hacker trying to intercept your information, and encryption will help you defend against those adversaries as well.
+Proper encryption, unfortunately, isn't always easy to use. The inconvenience posed by encryption systems is counter-balanced by the protection against much more than overzealous law enforcement agents. Your Internet communications are vulnerable to a wide range of governmental and private adversaries in addition to law enforcement, whether it's the National Security Agency or a hacker trying to intercept your information, and encryption will help you defend against those adversaries as well.
 
 The goal behind any EE2E chat is that all sensitive communication should be encrypted from both the server and everyone else who does not have the *passphrase*. The problem with most encrypted chat is that given a long enough timeline anything online is vulnerable to exploitation.
 
-TorchNoteJS tries to alleviate this by only running when you need it. When sensitive communication is necessary simply deploy a new TorchNoteJS app to Heroko and then delete the app using the Heroku GUI when done.
+TorchNoteJS tries to alleviate this by only running when you need it. When sensitive communication is necessary simply deploy a new TorchNoteJS app to Heroku and then delete the app using the Heroku GUI when done.
 
-##App Installation 
+##App Installation
 
 ###Easy way:
 - [Create a Heroku account](https://id.heroku.com/signup)
@@ -134,10 +140,10 @@ However if your connection is being monitored and your passphrase is weakit is p
 
 The integrity and stability of leading anonymous VPN software changes frequently so it is best to do your research on [which VPN to choose](http://torrentfreak.com/which-vpn-services-take-your-anonymity-seriously-2014-edition-140315/).
 
-Unlike a VPN Tor does not protect all of your computer's Internet traffic when you run it only THOSE applications that are properly configured to send their Internet traffic through Tor. Before using Tor please read up on [how to properlly use the service](https://torproject.org/about/overview.html.en).
+Unlike a VPN Tor does not protect all of your computer's Internet traffic when you run it only THOSE applications that are properly configured to send their Internet traffic through Tor. Before using Tor please read up on [how to properly use the service](https://torproject.org/about/overview.html.en).
 
 ####Operating System
-All operating systems are prone to interception, howeever [Tails OS](https://tails.boum.org) is the only OS designed specificly to adddress this problem.
+All operating systems are prone to interception, however [Tails OS](https://tails.boum.org) is the only OS designed specifically to address this problem.
 
 Tails is a live operating system, that you can start on almost any computer from a DVD, USB stick, or SD card. It aims at preserving your privacy and anonymity, and helps you to:
  - use the Internet anonymously and circumvent censorship
@@ -203,7 +209,34 @@ Those other solutions **cost money**, are **complicated to develop** and can't b
 The TorchNoteJS goal is not about making a one click solution to online communication. *Those do not exist.* Instead it is to be used as part of an encryption suite each part increasing your personal security. You can use TorchNoteJS without any additional security steps and it will still encrypt your conversation but that doesn't mean your conversation was not intercepted.
 
 ####Meh, why not just use ... ?
-Yes, there are other solutions for secure EE2E and I suggest you use them if you believe this application is knot sufficient. If you do find a legitimate reason to be suspect of TorchNoteJS please create an issue because I really don't want to promote something that is broken.
+Yes, there are other solutions for secure EE2E and I suggest you use them if you believe this application is not sufficient. If you do find a legitimate reason to be suspect of TorchNoteJS please create an issue because I really don't want to promote something that is broken.
 
 ---
+##I DON'T GET ANY OF THIS!
+Perhaps then this might help.
 [![Go Hard](https://raw.githubusercontent.com/spencerthayer/TorchNoteJS/master/public/img/go_hard.jpg)](http://youtu.be/0llr2_g11mE)
+
+[license-image]: http://img.shields.io/badge/license-MIT-blue.svg?style=flat
+[license-url]: LICENSE
+
+[npm-url]: https://npmjs.org/package/waterlock
+[npm-version-image]: http://img.shields.io/npm/v/waterlock.svg?style=flat
+[npm-downloads-image]: http://img.shields.io/npm/dm/waterlock.svg?style=flat
+
+[travis-url]: https://travis-ci.org/davidrivera/waterlock
+[travis-image]: http://img.shields.io/travis/davidrivera/waterlock.svg?style=flat
+
+[dependency-image]: http://img.shields.io/gemnasium/davidrivera/waterlock.svg?style=flat
+[dependency-url]: https://gemnasium.com/davidrivera/waterlock
+
+[coverage-image]: http://img.shields.io/coveralls/davidrivera/waterlock/master.svg?style=flat
+[coverage-url]: https://coveralls.io/r/davidrivera/waterlock?branch=master
+
+[gittip-image]: http://img.shields.io/gittip/davidrivera.svg?style=flat
+[gittip-url]: https://www.gittip.com/davidrivera/
+
+[waterlock-image]: https://lh3.googleusercontent.com/-aThk1tYLSh0/U5fAM6NyB5I/AAAAAAAAH84/FKmmmQ80XWY/w611-h144-no/waterlock-header.png
+[waterlock-url]: http://waterlock.ninja/
+
+[climate-image]: http://img.shields.io/codeclimate/github/davidrivera/waterlock.svg?style=flat
+[climate-url]: https://codeclimate.com/github/davidrivera/waterlock
